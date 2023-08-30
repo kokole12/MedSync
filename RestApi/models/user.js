@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 const { boolean } = require('webidl-conversions');
+const bcrypt = require('bcrypt')
 
 const userSchema = mongoose.Schema({
     email: {
@@ -9,7 +10,8 @@ const userSchema = mongoose.Schema({
     },
     username: {
         type: String,
-        unique: true
+        unique: true,
+        required: true
     },
     password: {
         type: String,
@@ -20,6 +22,12 @@ const userSchema = mongoose.Schema({
         enum: ['doctor', 'nurse', 'admin'],
         required: true
     }
+});
+
+userSchema.pre("save", async function (next) {
+    const salt = await bcrypt.genSalt();
+    this.password = await bcrypt.hash(this.password, salt);
+    next();
 });
 
 const User = mongoose.model('User', userSchema);
