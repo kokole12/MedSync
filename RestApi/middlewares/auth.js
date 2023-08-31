@@ -1,20 +1,26 @@
 const jwt = require('jsonwebtoken');
+require('dotenv').config
 
-export const authenticationMiddleware = async (req, res, next) => {
+const authenticationMiddleware = async (req, res, next) => {
     const authHeader = req.headers.authorization
     if (!authHeader || !authHeader.startsWith('Bearer ')) {
-        throw new CustomApiError("No valid token", 401)
+        throw new Error("No valid token")
     }
 
-    const theToken = authHeader.split(' ')[1]
+    const theToken = authHeader.split(' ')[2];
+
+    console.log(theToken)
 
     try {
         
-        const decodedToken = jwt.verify(theToken, process.env.SECRETE)
+        const decodedToken = jwt.verify(theToken, process.env.SECRETE);
+        console.log(decodedToken)
         const {id, username} = decodedToken
         req.user = {id, username}
         next()
     } catch (error) {
-        throw new Error('No authorised')
+        throw new Error('Not authorised')
     }
 }
+
+module.exports = authenticationMiddleware;
