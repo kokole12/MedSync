@@ -1,17 +1,35 @@
+const patientModel = require('../models/patient');
+const {StatusCodes} =  require('http-status-codes');
+
 const getAllPatients = async (req, res) => {
-    res.send('all patients');
+    const patients = await patientModel.find({});
+    res.status(StatusCodes.OK).json({patients});
 }
 
 const createPatient = async (req, res) => {
-    res.send('created patient');
+    const patient = await patientModel.create({...req.body});
+    res.status(StatusCodes.CREATED).json({patient});
 }
 
 const getSinglePatient = async (req, res) => {
-    res.send('got a patiend by id');
+    const {id: patientId} = req.params;
+    const patient = patientModel.findOne({_id: patientId});
+
+    if (!patient) {
+        throw new Error(`patient with id ${patientId} not found`)
+    }
+    res.status(StatusCodes.OK).json({patient});
 }
 
 const updatePatient = async(req, res) => {
-    res.send('updated patient');
+    const {id: patientId} = req.params;
+    const patient = await patientModel.findByIdAndUpdate({_id: patientId}, {...req.body},
+        {new: true, overwrite: true});
+    
+    if (!patient) {
+        throw new Error(`patient with id ${patientId} not found`);
+    }
+    res.status(StatusCodes.OK).json({patient});
 }
 
 module.exports = {
