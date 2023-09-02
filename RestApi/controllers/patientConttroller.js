@@ -23,7 +23,7 @@ const getSinglePatient = async (req, res) => {
 
 const updatePatient = async(req, res) => {
     const {id: patientId} = req.params;
-    const patient = await patientModel.findByIdAndUpdate({_id: patientId}, {...req.body},
+    const patient = await patientModel.findOneAndReplace({_id: patientId}, {...req.body},
         {new: true, overwrite: true});
     
     if (!patient) {

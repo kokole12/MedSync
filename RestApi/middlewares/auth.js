@@ -8,9 +8,6 @@ const authenticationMiddleware = async (req, res, next) => {
     }
 
     const theToken = authHeader.split(' ')[2];
-
-    console.log(theToken)
-
     try {
         
         const decodedToken = jwt.verify(theToken, process.env.SECRETE);
