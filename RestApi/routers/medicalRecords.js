@@ -4,7 +4,7 @@ const authenticationMiddleware =  require('../middlewares/auth')
 
 const recordRouter = express.Router();
 
-recordRouter.route('/').post(authenticationMiddleware, createMedicalRecord);
-recordRouter.route('/:id').get(authenticationMiddleware, getMedicalRecord);
+recordRouter.route('/').post(createMedicalRecord);
+recordRouter.route('/:id').get(getMedicalRecord);
 
 module.exports = recordRouter;
