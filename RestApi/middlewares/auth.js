@@ -11,9 +11,9 @@ const authenticationMiddleware = async (req, res, next) => {
     try {
         
         const decodedToken = jwt.verify(theToken, process.env.SECRETE);
-        console.log(decodedToken)
-        const {id, username} = decodedToken
-        req.user = {id, username}
+        console.log('decoded token');
+        const {userId, username} = decodedToken
+        req.user = {userId, username}
         next()
     } catch (error) {
         throw new Error('Not authorised')

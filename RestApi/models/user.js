@@ -25,7 +25,7 @@ const userSchema = new mongoose.Schema({
         required: true,
         unique: true,
     },
-    Hospital: {
+    hospital: {
         type: String,
         required: true
     },

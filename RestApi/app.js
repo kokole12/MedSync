@@ -5,6 +5,7 @@ const notFound = require('./middlewares/not-found');
 require('express-async-errors');
 const authRouter = require('./routers/authentication');
 const patientRouter = require('./routers/patient');
+const router = require('./routers/medicalRecord');
 
 
 const app = express();
@@ -19,6 +20,7 @@ app.get('/', async (req, res) => {
 
 app.use('/api/v1/auth/', authRouter);
 app.use('/api/v1/patient/', patientRouter);
+app.use('/api/v1/medical', router);
 
 // middlewares
 app.use(notFound);
