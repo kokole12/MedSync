@@ -1,16 +1,21 @@
 const { StatusCodes } = require('http-status-codes');
 const medicalRecordModel =  require('../models/medicalRecord');
 const patientModel = require('../models/patient');
+const { default: mongoose } = require('mongoose');
 
 const createMedicalRecord = async (req, res) => {
     console.log(req.body);
     const authenticatedUserId = req.user.userId;
     console.log(authenticatedUserId);
     const {diagnosis, treatmentPlan, medications, medicalHistory, patient} = req.body;
-    const patientId = patientModel.findById(patient);
-    if (!patientId) {
-        return res.status(404).json({ error: 'Patient not found' });
-    }
+    const patientId = new mongoose.Types.ObjectId(patient);
+
+    patientModel.findById(patientId).then((patient) => {
+        if (!patient) {
+            return res.status(404).json({ message: 'Patient not found' });
+        }
+    });
+    
     const medicalRecord = new medicalRecordModel({
         diagnosis,
         treatmentPlan,
