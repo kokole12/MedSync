@@ -6,10 +6,14 @@ require('express-async-errors');
 const authRouter = require('./routers/authentication');
 const patientRouter = require('./routers/patient');
 const router = require('./routers/medicalRecord');
+const swaggerUi = require('swagger-ui-express');
+const swaggerSpec = require('./swaggerConfig');
 
 
 const app = express();
 app.use(express.json());
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
+
 
 const port = process.env.PORT || 3001
 
