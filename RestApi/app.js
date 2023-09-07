@@ -6,6 +6,7 @@ require('express-async-errors');
 const authRouter = require('./routers/authentication');
 const patientRouter = require('./routers/patient');
 const router = require('./routers/medicalRecord');
+const userRouter = require('./routers/users');
 const swaggerUi = require('swagger-ui-express');
 const swaggerSpec = require('./swaggerConfig');
 
@@ -25,6 +26,7 @@ app.get('/', async (req, res) => {
 app.use('/api/v1/auth/', authRouter);
 app.use('/api/v1/patient/', patientRouter);
 app.use('/api/v1/medical', router);
+app.use('/api/v1/users/', userRouter);
 
 // middlewares
 app.use(notFound);

@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
 const { boolean } = require('webidl-conversions');
-const bcrypt = require('bcrypt')
+const bcrypt = require('bcrypt');
+const profileSchema = require('../schemas/profile');
 
 const userSchema = new mongoose.Schema({
     firstname: {
@@ -56,7 +57,8 @@ const userSchema = new mongoose.Schema({
     isVerified: {
         type: Boolean,
         default: false,
-    }
+    },
+    profile: profileSchema,
 });
 
 userSchema.pre("save", async function (next) {
