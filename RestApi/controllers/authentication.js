@@ -15,15 +15,18 @@ const login = async (req, res) => {
     const {username, password} = req.body
     
     if (!username || !password) {
-        throw new Error('Please create an account');
+        res.status(404).json({error: 'No credentials provided'});
+        return;
     }
     const user = await User.findOne({username});
     if (!user) {
-        throw new Error('Please create an account first');
+        res.status(404).json({error: 'Not a registered user'});
+        return;
     }
     const correctPassword = await bcrypt.compare(password, user.password)
     if (!correctPassword) {
-        throw new Error('Invalid Credentials');
+        res.status(401).json({error: 'Unauthorised'})
+        return;
     }
     const token = jwt.sign(
         {userId: user._id, username: user.username},

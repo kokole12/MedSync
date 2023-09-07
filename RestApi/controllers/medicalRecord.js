@@ -30,7 +30,20 @@ const createMedicalRecord = async (req, res) => {
 }
 
 const getPatientMedicalRecord = async (req, res) => {
-    res.send('got medical record for a patient');
+    const {id: patientId} = req.params;
+    const isValidPatient = await patientModel.findById(patientId);
+    
+    if (!isValidPatient) {
+        res.status(401).json({error: 'No registered patient'});
+        return;
+    }
+
+    const medicalRecord = await medicalRecordModel.findById(patientId);
+    if (!medicalRecord) {
+        res.status(404).json({error: "No medical records"});
+        return;
+    }
+    res.status(200).json({medicalRecord});
 }
 
 module.exports = {

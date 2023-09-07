@@ -16,7 +16,7 @@ const getSinglePatient = async (req, res) => {
     const patient = patientModel.findOne({_id: patientId});
 
     if (!patient) {
-        throw new Error(`patient with id ${patientId} not found`)
+        res.status(404).json({error: 'No patient found'});
     }
     res.status(StatusCodes.OK).json({patient});
 }
@@ -27,7 +27,7 @@ const updatePatient = async(req, res) => {
         {new: true, overwrite: true});
     
     if (!patient) {
-        throw new Error(`patient with id ${patientId} not found`);
+        res.status(404).json({error: 'No patient found'})
     }
     res.status(StatusCodes.OK).json({patient});
 }
