@@ -1,0 +1,175 @@
+.Header {
+        background: linear-gradient(to bottom, #DAE6FB, white);
+        /* You can adjust the direction of the gradient by changing 'to bottom' to another value like 'to right', 'to top', 'to left', or even specific angles like '45deg'. */
+}
+.NavBar{
+    display: flex;
+    justify-content: space-around;
+
+}
+h1{
+    color: #0775F4;
+}
+ul {
+    display: flex;
+    text-decoration: none;
+    margin-top: 30px;
+    color: #102242;
+}
+li {
+    margin-left: 60px;
+    list-style-type: none;
+}
+.MedSync1{
+    width: 100%;
+    height: 500px;
+    z-index: 1;
+    margin-top: -800px;
+    margin-bottom: 18px;
+    /* margin-right: 60px; */
+    /* border-radius: 50%; */
+}
+.CaptionImg {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin-top: 50px;
+}
+.Caption {
+    font-size: 60px;
+    /* margin-left: 20px; */
+}
+#img1Background {
+    background-color: #DAE6FB;
+    border-radius: 30%;
+    width: 80%;
+    height: 400px;
+    z-index: -1;
+    margin-left: 40px;
+    margin-top: 80px;
+}
+.text1{
+    margin-top: -25px;
+    margin-bottom: 30px;
+    font-size: small;
+    color: #102242;
+}
+.GetStarted{
+    padding: 15px;
+    border-radius: 5px;
+    background-color: #0775F4;
+    color: white;
+    border: none;
+}
+.NumText{
+    display: flex;
+}
+.NumText2{
+    margin-left: 30px;
+}
+.NumText3{
+    margin-left: 30px;
+}
+.num{
+    color: #0775F4;
+    margin-bottom: -20px;
+    font-size: x-large;
+    font-weight: 500;
+}
+.text{
+    color: #102242;
+}
+.backgroundIcon{
+    background-color: #DAE6FB;
+    border-radius: 10px;
+    padding: 40px;
+    width: 40px;
+    /* margin-left: 70px; */
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    
+}
+.categoryP{
+    text-align: center;
+    color: gray;
+}
+.categoryDiv{
+    text-align: center;
+    margin-top: 40px;
+}
+.category2Div{
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+}
+.category1{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: box-shadow 0.7s;
+
+}
+.category1:hover,
+.category2:hover,
+.category3:hover,
+.category4:hover {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  padding: 20px;
+  border-radius: 10px;
+}
+.category2{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-left: 80px;
+}
+.category3{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-left: 80px;
+}
+.category4{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-left: 80px;
+}
+.categoryH2{
+    font-size: xx-large;
+    color: #102242;
+}
+.SignUp{
+    border: solid  1px #102242;
+    padding: 10px;
+    border-radius: 10px;
+    margin-top: -5px;
+}
+li:hover{
+    color: #0775F4;
+}
+li {
+    position: relative;
+  }
+  
+  li::after {
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #0775F4;
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+  }
+  
+  li:hover::after {
+    transform: scaleX(1);
+  }
