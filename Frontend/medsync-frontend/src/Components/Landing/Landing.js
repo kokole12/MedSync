@@ -40,7 +40,7 @@ const Landing = () => {
                         Your Trusted Source <br />for Medical Record <br /> Keeping
                     </h2>
                     <p className='text1'>
-                        Welcome to MedSync where we help Doctors keep track <br /> off there patient medical Record
+                        Welcome to MedSync where we help Doctors keep track <br /> of thier patients medical record, and also share <br /> informaton to make treatment more <br /> convenient.
                     </p>
                     <button className='GetStarted'>Get Started</button>
 
