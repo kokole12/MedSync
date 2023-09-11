@@ -30,7 +30,7 @@ app.use('/api/v1/users/', userRouter);
 
 // middlewares
 app.use(notFound);
-app.use(errorHandler);
+//app.use(errorHandler);
 
 const start = async () => {
     await connectToDb(process.env.MONGO_URI)
