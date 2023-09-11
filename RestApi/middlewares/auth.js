@@ -1,5 +1,6 @@
 const jwt = require('jsonwebtoken');
-require('dotenv').config
+require('dotenv').config;
+const {isTokenBlacklisted} = require('../utils/blacklisted');
 
 const authenticationMiddleware = async (req, res, next) => {
     const authHeader = req.headers.authorization
@@ -8,6 +9,11 @@ const authenticationMiddleware = async (req, res, next) => {
     }
 
     const theToken = authHeader.split(' ')[2];
+    
+    if (isTokenBlacklisted(theToken)) {
+        res.status(401).json({error: 'Unauthorised'});
+    }
+    
     try {
         
         const decodedToken = jwt.verify(theToken, process.env.SECRETE);

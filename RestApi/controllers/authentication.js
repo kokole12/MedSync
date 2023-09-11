@@ -3,7 +3,7 @@ const bcrypt = require('bcrypt');
 const {StatusCodes} = require('http-status-codes');
 const jwt = require('jsonwebtoken');
 require('dotenv').config();
-const blacklist = require('../middlewares/checkToken').blacklist; // Import the blacklist
+const {addToBlacklist} = require('../utils/blacklisted')
 
 
 const register = async(req, res) => {
@@ -37,15 +37,20 @@ const login = async (req, res) => {
     res.status(StatusCodes.OK).json({user, token});
 }
 
-function logoutController(req, res) {
-    const token = req.headers.authorization.split(' ')[1];
-    blacklist.add(token);
-    res.json({ message: 'Logged out successfully' });
-  }
-  
+const logout = async (req, res) => {
+    const token = req.headers.authorization.split(' ')[2];
+    if (!token) {
+        res.status(StatusCodes.BAD_REQUEST).json({Message: 'Already logged out'});
+        return;
+    };
+    await addToBlacklist(token);
+
+    res.status(200).json({Message: 'Logout successful'});
+    res.end();
+}
 
 module.exports = {
     register,
     login,
-    logoutController
+    logout
 }

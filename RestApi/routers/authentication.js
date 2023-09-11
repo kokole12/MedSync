@@ -1,5 +1,5 @@
 const express = require('express');
-const {login, register, logoutController} = require('../controllers/authentication');
+const {login, register, logout} = require('../controllers/authentication');
 const authenticationMiddleware = require('../middlewares/auth');
 
 const authRouter = express.Router();
@@ -112,6 +112,6 @@ authRouter.route('/login').post(login);
  *       '500':
  *         description: Internal server error.
  */
-authRouter.route('/logout').post( authenticationMiddleware, logoutController)
 
+authRouter.post('/logout', authenticationMiddleware, logout);
 module.exports = authRouter;
