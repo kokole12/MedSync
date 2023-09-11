@@ -51,5 +51,5 @@ module.exports = {
     getSingleUser,
     updateUser,
     deleteUser,
-    uploadProfilePicture};
-
+    uploadProfilePicture
+};

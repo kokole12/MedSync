@@ -9,7 +9,7 @@ const router = require('./routers/medicalRecord');
 const userRouter = require('./routers/users');
 const swaggerUi = require('swagger-ui-express');
 const swaggerSpec = require('./swaggerConfig');
-
+const errorHandler = require('./middlewares/error-handler');
 
 const app = express();
 app.use(express.json());
@@ -30,6 +30,7 @@ app.use('/api/v1/users/', userRouter);
 
 // middlewares
 app.use(notFound);
+app.use(errorHandler);
 
 const start = async () => {
     await connectToDb(process.env.MONGO_URI)
