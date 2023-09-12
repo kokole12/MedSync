@@ -7,29 +7,29 @@ const Landing = () => {
   return (
     <div className='LandingPage'>
             <div className='Header'>
-            <div className='NavBar'>
+            <div className='NavBar' class="NavBar">
             <div>
-            <h1>MedSync</h1>
+            <h1 class="Nav-title">MedSync</h1>
             </div>
             <div>
                 <ul>
                     <li>
-                        Home
+                        <a href="#">Home</a>
                     </li>
                     <li>
-                        Services
+                        <a href="#">Services</a>
                     </li>
                     <li>
-                        About
+                        <a href="#">About</a>
                     </li>
                     <li>
-                        Doctors
+                        <a href="#">Doctors</a>
                     </li>
                     <li>
-                        Login
+                        <a href="#">Login</a>
                     </li>
                     <li className='SignUp'>
-                        Sign Up
+	  		<a href="#" class="signup">Sign Up</a>
                     </li>
                 </ul>
             </div>
@@ -42,7 +42,7 @@ const Landing = () => {
                     <p className='text1'>
                         Welcome to MedSync where we help Doctors keep track <br /> of thier patients medical record, and also share <br /> information to make treatment more <br /> convenient.
                     </p>
-                    <button className='GetStarted'>Get Started</button>
+                    <button className='GetStarted'><a href="#" class="button-get-started">Get Started</a></button>
 
                     <div className='NumText'>
                         <div className='NumText1'>
