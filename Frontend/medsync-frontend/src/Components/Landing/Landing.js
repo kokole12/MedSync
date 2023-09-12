@@ -37,7 +37,7 @@ const Landing = () => {
             <div className='CaptionImg'>
                 <div>
                     <h2 className='Caption'>
-                        Your Trusted Source <br />for Medical Record <br /> Keeping
+                        Your Trusted Source <br />for Medical Record<br /> Keeping
                     </h2>
                     <p className='text1'>
                         Welcome to MedSync where we help Doctors keep track <br /> of thier patients medical record, and also share <br /> informaton to make treatment more <br /> convenient.
@@ -119,7 +119,7 @@ const Landing = () => {
                     Data Analytics
                     </h3>
                     <p className='categoryP'>
-                    Offering data analytics tools <br />to help healthcare professionals <br />gain insights from patient data.
+                    Offering data analytics tools <br />to help healthcare professionals<br />gain insights from patient data.
                 </p>
 
                 </div>
