@@ -10,9 +10,11 @@ const userRouter = require('./routers/users');
 const swaggerUi = require('swagger-ui-express');
 const swaggerSpec = require('./swaggerConfig');
 const errorHandler = require('./middlewares/error-handler');
+const cors = require('cors');
 
 const app = express();
 app.use(express.json());
+app.use(cors());
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 
 
