@@ -1,6 +1,7 @@
 const userRouter = require('express').Router();
 const multer = require('multer');
 const {allUsers, getSingleUser, updateUser, deleteUser, uploadProfilePicture} = require('../controllers/users');
+const authenticationMiddleware = require('../middlewares/auth');
  
 const storage = multer.diskStorage({
     destination: (req, file, cb) => {
@@ -17,8 +18,8 @@ const uplaod = multer({storage});
 
 userRouter.route('/').get(allUsers);
 userRouter.get('/:id', getSingleUser);
-userRouter.put('/:id', updateUser);
-userRouter.delete('/:id', deleteUser);
-userRouter.post('/:id/upload-profile-picture', uplaod.single('profilePicture'), uploadProfilePicture);
+userRouter.put('/:id', authenticationMiddleware, updateUser);
+userRouter.delete('/:id', authenticationMiddleware, deleteUser);
+userRouter.post('/:id/upload-profile-picture', uplaod.single('profilePicture'),  authenticationMiddleware, uploadProfilePicture);
 
 module.exports = userRouter;
