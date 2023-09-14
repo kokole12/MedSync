@@ -1,3 +1,4 @@
+const { StatusCodes } = require('http-status-codes');
 const User = require('../models/user');
 
 const allUsers = async (req, res) => {
@@ -16,6 +17,11 @@ const getSingleUser = async (req, res) => {
 }
 const updateUser = async (req, res) => {
     const {id: userId} = req.params;
+    const authenticatedUserId = req.user.userId;
+    if (userId !== authenticatedUserId) {
+        res.status(StatusCodes.UNAUTHORIZED).json({error: 'Unauthorized request'});
+        return;
+    }
     const user = await User.findOneAndUpdate(userId);
     if (!user) {
         res.status(404).json({error: 'No user found'});
@@ -25,6 +31,11 @@ const updateUser = async (req, res) => {
 }
 const deleteUser = async (req, res) => {
     const {id: userId} = req.params;
+    const authenticatedUserId = req.user.userId;
+    if (userId !== authenticatedUserId) {
+        res.status(StatusCodes.UNAUTHORIZED).json({error: 'Unauthorized request'});
+        return;
+    }
     const user = await User.findByIdAndDelete(userId);
     if (!user) {
         res.status(404).json({error: 'No user found'});
@@ -35,6 +46,11 @@ const deleteUser = async (req, res) => {
 
 const uploadProfilePicture = async (req, res) => {
     const {id: userId} = req.params;
+    const authenticatedUserId = req.user.userId;
+    if (userId !== authenticatedUserId) {
+        res.status(StatusCodes.UNAUTHORIZED).json({error: 'Unauthorized request'});
+        return;
+    }
     if (!userId) {
         res.status(404).json({error: 'No user found'});
         return;
@@ -51,5 +67,5 @@ module.exports = {
     getSingleUser,
     updateUser,
     deleteUser,
-    uploadProfilePicture};
-
+    uploadProfilePicture
+};

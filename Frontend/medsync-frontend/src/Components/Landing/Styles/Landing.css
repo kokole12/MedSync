@@ -3,23 +3,69 @@
         /* You can adjust the direction of the gradient by changing 'to bottom' to another value like 'to right', 'to top', 'to left', or even specific angles like '45deg'. */
 }
 .NavBar{
-    display: flex;
-    justify-content: space-around;
+    display: inline-flex;
+    width: 90%;
+    justify-content: space-between;
+    padding: 0 5% 0 5%;
+    background-color: #CEE6F3;
 
 }
+
+.Nav-title {
+	display: inline-block;
+	justify-content: left;
+	padding-left: 5%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	color: #068FFF;
+}
+
+li .signup {
+    display: block;
+    /*padding: 2.5%;*/
+    width: 100px;
+    border-radius: 5px;
+    color: #279EFF;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    border: none;
+    text-align: center;
+}
+
+li .signup:hover {
+	color: #102242;
+}
+
+
+.button-get-started:hover {
+	color: #FFFF;
+}
+
 h1{
     color: #0775F4;
 }
+
 ul {
     display: flex;
     text-decoration: none;
-    margin-top: 30px;
+    justify-content: right;
+    align-items: center;
+    /* margin-top: 5%; */
     color: #102242;
 }
+
 li {
-    margin-left: 60px;
+    /*display: inline-block;*/
+    margin-left: 10%;
     list-style-type: none;
 }
+
 .MedSync1{
     width: 100%;
     height: 500px;
@@ -37,6 +83,7 @@ li {
 }
 .Caption {
     font-size: 60px;
+    margin-left: 3%;
     /* margin-left: 20px; */
 }
 #img1Background {
@@ -55,7 +102,7 @@ li {
     color: #102242;
 }
 .GetStarted{
-    padding: 15px;
+    padding: 2.5%;
     border-radius: 5px;
     background-color: #0775F4;
     color: white;
