@@ -1,7 +1,13 @@
 import React from 'react';
 import './Styles/Landing.css';
-import MedSync8 from '../Images/medsync10 (1).png';
+import MedSync1 from '../Images/medsync12.png';
+import MedSync2 from '../Images/medsync15.jpg';
+import MedSync3 from '../Images/medsync13.jpeg';
+import MedSync4 from '../Images/medsync14.jpeg';
+import MedSync5 from '../Images/medsync16.jpg';
+import MedSync6 from '../Images/medsync17.png';
 import '@fortawesome/fontawesome-free/css/all.min.css';
+
 
 const Landing = () => {
   return (
@@ -64,7 +70,7 @@ const Landing = () => {
                 <div className='img1Background' id='img1Background'>
 
                 </div>
-                <img  className='MedSync1' src={MedSync8} alt='MedSync8' />
+                <img  className='MedSync1' src={MedSync1} alt='MedSync8' />
                 </div>
             </div>
             
@@ -126,9 +132,148 @@ const Landing = () => {
             </div>
         </div>
 
-        <div>
-            <h2>Meet Our Specialist</h2>
+        <h2 className='Meet'>Meet Our Specialist</h2>
+
+        <div className='Specialist'>
+        <div className='Doctor1'>
+            <img className='ImageDoctor1' src={MedSync2} alt='MedSync2' />
+            <h3>Dr Comfort James</h3>
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
         </div>
+
+        <div className='Doctor2'>
+            <img className='ImageDoctor2' src={MedSync3} alt='MedSync3' />
+            <h2>Dr Ben Jacob</h2>
+            <p>Lorem Ipsum is simply dummy text of<br /> the printing and typesetting industry.</p>
+        </div>
+
+        <div className='Doctor3'>
+            <img className='ImageDoctor3' src={MedSync4} alt='MedSync4' />
+            <h2>Dr John Endurance</h2>
+            <p>Lorem Ipsum is simply dummy text of<br /> the printing and typesetting industry.</p>
+        </div>
+        </div>
+
+        <div className='DesignationImg'>
+            <div>
+                <h3 className='h3Designation'>DESIGNATION</h3>
+                <h2 className='h2Designation'>Why You Choose MedSync</h2>
+                <div className='iconH4P'>
+                    <div className='desIcon'>
+                        <i class="fa-solid fa-plug fa-2xl" style={{color: '#ebecf0'}}></i>
+                    </div>
+                    <div className='desImg'>
+                        <h4>Best Expert Doctors</h4>
+                        <p>Lorem Ipsum is simply dummy text of the printing<br /> and typesetting industry</p>
+                    </div>
+                </div>
+
+                <div className='iconH4P'>
+                    <div className='desIcon'>
+                        <i class="fa-solid fa-headset fa-2xl" style={{color: '#f0f2f5'}}></i>
+                    </div>
+                    <div className='desImg'>
+                        <h4>24/7 Support & Health Care</h4>
+                        <p>Lorem Ipsum is simply dummy text of the <br /> printing and typesetting industry</p>
+                    </div>
+                </div>
+
+                <div className='iconH4P'>
+                    <div className='desIcon'>
+                        <i class="fa-solid fa-truck-medical fa-2xl" style={{color: '#edeff2'}}></i>
+                    </div>
+                    <div className='desImg'>
+                        <h4>Emergency Service</h4>
+                        <p>Lorem Ipsum is simply dummy text of the printing<br /> and typesetting industry</p>
+                    </div>
+                </div>
+            </div>
+            <div className='imgDiv'>
+                <img className='imgDesignation' src={MedSync6} alt='MedSync' />
+                <div className='AfterImg'></div>
+            </div>
+        </div>
+
+        <div className='Testimonial'>
+            <div className='patient-container'>
+            <img className='MedSync5' src={MedSync5} alt='MedSync5'/>
+            <div className='patient1'>
+            <p>
+            Contrary to popular belief, Lorem Ipsum is not simply 
+            <br /> random text. It has roots in a piece of classical Latin 
+            <br/>literature from 45 BC, <br />
+            </p>
+            <h4>
+                James David
+            </h4>
+            <p>Lagos Lekki</p>
+
+            </div>
+            <div className='patient2'>
+            <h4 className='Ifeoma'>
+                Ifeoma David
+            </h4>
+            <p className='Abuja'>Abuja Gwagwalada</p>
+
+            </div>
+
+            </div>
+            <div className='TestimonialDiv2'>
+            <h4 className='testh4'>TESTIMIONAL</h4>
+            <h2 className='CaptionTest1'>What Patients Say</h2>
+            <h2 className='CaptionTest2'>About Us</h2>
+
+            </div>
+        </div>
+
+        <div className='subSend'>
+            <div className='subscribeDiv'>
+                <h2 className='SubText'>Subscribe to get information, latest news and other <br />interesting things about MedSync</h2>
+                <i class="fa-regular fa-envelope fa-lg" style={{color: '#b0b2b5'}}></i>
+                <input className='SubInput' placeholder='Your email'></input>
+                <button className='SubButton'>Subscribe</button>
+            </div>
+            <div className='sendIcon'>
+            <i class="fa-solid fa-paper-plane fa-2xl" style={{color: '#fbfcfe'}}></i>
+            </div>
+        </div>
+        
+        <footer>
+        <div className='footerDiv'>
+            <div className='footerTitle'>
+            <h2>MedSync</h2>
+            <p>Get Register and save you <br /> medical record</p>
+            </div>
+            <div className='ServiceInfoContact'>
+                <div className='Service'>
+                <h4>Services</h4>
+                <p>About</p>
+                <p>Home</p>
+                <p>Services</p>
+
+                </div>
+                <div className='Info'>
+                <h4>information</h4>
+                <p>Help/FAQ</p>
+                <p>An Appointment</p>
+                <p>Community</p>
+                <p>Sign Up</p>
+
+                </div>
+                <div className='Contact'>
+                <h4>Contact</h4>
+                <p>+8867445</p>
+                <p>medsync@gmail.com</p>
+
+                </div>
+            </div>
+            <div className='footerIcon'>
+            <i class="fa-brands fa-facebook fa-2xl" style={{color: '#d4d7de'}}></i>
+            <i class="fa-brands fa-square-instagram fa-2xl" style={{color: '#d4d7de'}}></i>
+            <i class="fa-brands fa-x-twitter fa-2xl" style={{color: '#d4d7de'}}></i>
+            </div>
+        </div>
+        </footer>
     </div>
   )
 }
