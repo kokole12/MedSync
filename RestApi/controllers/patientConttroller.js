@@ -32,9 +32,33 @@ const updatePatient = async(req, res) => {
     res.status(StatusCodes.OK).json({patient});
 }
 
+const searchPatient = async (req, res) => {
+    const {contactNumber, email} = req.query
+    const searchTerm = req.body;
+    let queryObject = {};
+    if (contactNumber) {
+        queryObject.contactNumber = contactNumber;
+    }
+    if (email) {
+        queryObject.email = email;
+    }
+    console.log(queryObject);
+    const patient = await patientModel.find({
+        queryObject
+        // $text: { $search: searchTerm, $diacriticSensitive: true },
+    });
+
+    if (!patient) {
+        res.status(404).json('No patient found');
+    }
+
+    res.json({patient});
+}
+
 module.exports = {
     getAllPatients,
     createPatient,
     getSinglePatient,
-    updatePatient
+    updatePatient,
+    searchPatient
 }

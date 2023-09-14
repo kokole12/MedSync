@@ -4,7 +4,8 @@ const {
     getAllPatients,
     createPatient,
     updatePatient,
-    getSinglePatient} = require('../controllers/patientConttroller');
+    getSinglePatient,
+    searchPatient} = require('../controllers/patientConttroller');
 
 const patientRouter = express.Router();
 
@@ -106,5 +107,7 @@ patientRouter.get('/:id', authenticationMiddleware, getSinglePatient)
  *         description: Internal server error.
  */
 patientRouter.put('/:id', authenticationMiddleware, updatePatient);
+
+patientRouter.post('/search', searchPatient);
 
 module.exports = patientRouter;
