@@ -7,39 +7,14 @@ import MedSync4 from '../Images/medsync14.jpeg';
 import MedSync5 from '../Images/medsync16.jpg';
 import MedSync6 from '../Images/medsync17.png';
 import '@fortawesome/fontawesome-free/css/all.min.css';
+import NavBar from '../NavBar/NavBar';
 
 
 const Landing = () => {
   return (
     <div className='LandingPage'>
             <div className='Header'>
-            <div className='NavBar' class="NavBar">
-            <div>
-            <h1 class="Nav-title">MedSync</h1>
-            </div>
-            <div>
-                <ul>
-                    <li>
-                        <a href="#">Home</a>
-                    </li>
-                    <li>
-                        <a href="#">Services</a>
-                    </li>
-                    <li>
-                        <a href="#">About</a>
-                    </li>
-                    <li>
-                        <a href="#">Doctors</a>
-                    </li>
-                    <li>
-                        <a href="#">Login</a>
-                    </li>
-                    <li className='SignUp'>
-	  		<a href="#" class="signup">Sign Up</a>
-                    </li>
-                </ul>
-            </div>
-            </div>
+                <NavBar />
             <div className='CaptionImg'>
                 <div>
                     <h2 className='Caption'>
