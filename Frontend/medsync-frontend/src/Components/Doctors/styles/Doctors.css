@@ -1,0 +1,28 @@
+.container-fluid {
+	margin: 0 5% 5% 0;
+}
+
+.header {
+	margin: 2% 5% 3% 5%;
+}
+
+.logo {
+	text-decoration: none;
+}
+
+.search-button {
+	margin-left: 2%;
+}
+
+*, ::after, ::before {
+    box-sizing: border-box;
+}
+
+.header .toggle-sidebar-btn {
+    font-size: 32px;
+    padding-left: 10px;
+    cursor: pointer;
+    color: #012970;
+}
+
+
