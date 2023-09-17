@@ -1,5 +1,9 @@
 import React from "react";
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/js/bootstrap.bundle.min';
 import "./styles/Doctors.css";
+import $ from 'jquery';
+import Popper from 'popper.js';
 import medsync14 from "../Images/medsync14.jpeg";
 import news1 from "../Images/news-1.jpeg";
 import news2 from "../Images/news-2.jpeg";
@@ -8,7 +12,7 @@ import NavBar from "../NavBar/NavBar.js";
 
 const Doctors = () => {
   return (
-    <div>
+    <div class="container-fluid">
       <div className="navDoctor">
         <h1 className="Doctorh1">MedSync Admin</h1>
         <div className="SearchInput">
