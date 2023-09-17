@@ -1,0 +1,269 @@
+.navDoctor{
+    display: flex;
+    justify-content: space-between;
+    background-color: #ffffff;
+    box-shadow: 0px 4px 4px rgba(197, 193, 193, 0.2);
+    position: fixed;
+    z-index: 1;
+    width: 100%;
+}
+.sideNav{
+    position: fixed;
+    z-index: 0;
+    height: 100vh;
+}
+.sideNavIcon{
+    margin-left: 10px;
+}
+.profileDoctor{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+.Doctorh1{
+    font-size: 20px;
+    margin-left: 50px;
+}
+/* .BelowDashboard{
+    display: flex;
+
+} */
+.mainBody{
+    margin-left: 250px;
+}
+.mainBodyP{
+    margin-left: 50px;
+    color: gray;
+}
+.mainBody h2{
+    margin-top: 70px;
+    margin-left: 50px;
+}
+.SearchInput{
+    margin-top: 10px;
+    margin-left: -50%;
+}
+.NavIcon{
+    margin-right: 20px;
+}
+input{
+    width: 300px;
+    padding: 10px;
+    border-radius: 5px;
+    border: solid rgb(173, 171, 171) 1px;
+}
+.searchIcon{
+    margin-left: -30px;
+}
+.bellIcon{
+    margin-right: 30px;
+    margin-top: 15px;
+}
+.messageIcon{
+    margin-right: 30px;
+   margin-top: 15px;
+}
+.profileDoctor{
+    margin-right: 50px;
+    margin-top: 5px
+}
+.BMP{
+    display: flex;
+}
+.mainBody{
+    width: 100%;
+    height: 100vh;
+}
+.sideNav{
+    background-color: #ffffff;
+    padding-right: 100px;
+    padding-left: 30px;
+    box-shadow: 4px 0px 4px rgba(193, 184, 184, 0.2);
+}
+
+.Body{
+    display: flex;
+}
+.spanDiv{
+    margin-top: 80px;
+
+}
+.spanDiv3{
+    margin-top: 40px;
+}
+.spanDiv1{
+    margin-top: 40px;
+}
+.spanDiv1:hover{
+    border-radius: 5px;
+    padding: 10px;
+    background-color: #c4dffe;
+    width: 150px;
+}
+.spanDiv3:hover{
+    border-radius: 5px;
+    padding: 10px;
+    background-color: #c4dffe;
+    width: 150px;
+}
+.spanDiv2{
+    margin-top: 40px;
+    font-size: 12px;
+    color: gray;
+}
+.SRC{
+    display: flex;
+    width: 90%;
+}
+.BelowDashboard{
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+}
+.cartIcon{
+    display: flex;
+    margin-top: 40px;
+}
+.Today{
+    color: gray;
+}
+.Month{
+    color: gray;
+}
+.Year{
+    color: gray;
+}
+.increase{
+    margin-top: -50px;
+    margin-left: 20px;
+}
+
+.increase p{
+    margin-top: -20px;
+    color: gray;
+}
+.saleDiv{
+    padding: 10px;
+    border-radius: 10px;
+    background-color: whitesmoke;
+    margin-left: 50px;
+    padding-left: 20px;
+    padding-right: 20px;
+    width: 60%;
+}
+.RevenueDiv{
+    padding: 10px;
+    border-radius: 10px;
+    background-color: whitesmoke;
+    margin-left: 3%;
+    padding-left: 20px;
+    padding-right: 20px;
+    width: 60%;
+}
+.CustomerDiv{
+    padding: 10px;
+    border-radius: 10px;
+    background-color: whitesmoke;
+    margin-left: 3%;
+    padding-left: 20px;
+    padding-right: 20px;
+    width: 60%;
+}
+.Report{
+    background-color: whitesmoke;
+    margin-top: 40px;
+    margin-left: 50px;
+    width: 83%;
+    padding: 10px;
+    border-radius: 10px;
+}
+.spanReport{
+    color: gray;
+}
+.RecentSale{
+    background-color: whitesmoke;
+    margin-top: 40px;
+    margin-left: 50px;
+    width: 83%;
+    padding: 10px;
+    border-radius: 10px;
+}
+.TopSale{
+    background-color: whitesmoke;
+    margin-top: 40px;
+    margin-left: 50px;
+    width: 83%;
+    padding: 10px;
+    border-radius: 10px;
+}
+th, td {
+    text-align: left;
+    padding: 20px;
+  }
+  th{
+    margin-top: 510px;
+  }
+
+  .spanToday{
+    color: gray;
+  }
+  .dashboardActivities{
+    display: flex;
+  }
+  .Activity{
+    background-color: whitesmoke;
+    border-radius: 10px;
+    padding: 10px;
+    margin-right: 20px;
+  }
+  .mins{
+    color: gray;
+  }
+  .Activity p{
+    margin-top: 30px;
+  }
+  .newUpdate{
+    background-color: whitesmoke;
+    border-radius: 10px;
+    margin-top: 30px;
+    padding: 10px;
+    margin-right: 20px;
+  }
+  .spanNewUpdate{
+    color: gray;
+  }
+  .news1{
+    display: flex;
+    margin-top: 30px;
+  }
+  .news2{
+    display: flex;
+    margin-top: 30px;
+  }
+  .news3{
+    display: flex;
+    margin-top: 30px;
+  }
+  .newsImg1{
+    width: 70px;
+    height: 50px;
+    border-radius: 5px;
+  }
+  .newsImg2{
+    width: 70px;
+    height: 50px;
+    border-radius: 5px;
+  }
+  .newsImg3{
+    width: 70px;
+    height: 50px;
+    border-radius: 5px;
+  }
+  .newsh4{
+    margin-left: 10px;
+    margin-top: -30px;
+  }
+  .newsh4 p{
+    margin-top: -10px;
+    color: gray;
+  }
