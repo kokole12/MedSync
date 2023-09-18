@@ -14,15 +14,15 @@ const Doctors = () => {
   return (
     <div class="container-fluid">
       <div className="navDoctor">
-        <h1 className="Doctorh1">MedSync Admin</h1>
-        <div className="SearchInput">
-          <span className="NavIcon">
-            <i class="fa-solid fa-bars fa-xl" style={{ color: "#6b94db" }}>
-	  	::before == $0
-	  </i>
-          </span>
+	  <div class="d-flex align-items-center justify-content-between mx-1">
+      <a href="../Landing/Landing.js" className="Doctorh1" class="logo d-flex align-items-center">MedSync Admin</a>
 
-          <input placeholder="Search"></input>
+      <i className="NavIcon" class="fa-solid fa-bars fa-xl toggle-sidebar-btn"></i>
+    </div> {/* End title */}
+
+	  <div className="SearchInput" class="search">
+	  <input type="text" name="query" placeholder="Search" title="Enter search keyword" />
+	  
           <span className="searchIcon">
             <i
               class="fa-solid fa-magnifying-glass"
@@ -30,6 +30,7 @@ const Doctors = () => {
             ></i>
           </span>
         </div>
+
         <div className="BMP">
           <span className="bellIcon">
             <i
