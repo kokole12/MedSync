@@ -129,7 +129,7 @@ const Doctors = () => {
                   </div>
                 </div>
               </div>
-              <div className="CustomerDiv">
+              <div className="CustomerDiv" id="CustomerDiv">
                 <p>
                   Customer | <span className="Year">This Year</span>
                 </p>
@@ -146,6 +146,10 @@ const Doctors = () => {
                   </div>
                 </div>
               </div>
+
+
+
+
             </div>
 
             <div className="Report">
