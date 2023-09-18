@@ -17,7 +17,9 @@ const Doctors = () => {
         <h1 className="Doctorh1">MedSync Admin</h1>
         <div className="SearchInput">
           <span className="NavIcon">
-            <i class="fa-solid fa-bars fa-xl" style={{ color: "#6b94db" }}></i>
+            <i class="fa-solid fa-bars fa-xl" style={{ color: "#6b94db" }}>
+	  	::before == $0
+	  </i>
           </span>
 
           <input placeholder="Search"></input>
