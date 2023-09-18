@@ -29,7 +29,7 @@ const Doctors = () => {
               style={{ color: "#d9dbdd" }}
             ></i>
           </span>
-        </div>
+        </div> {/* End searchbar */}
 
         <div className="BMP">
           <span className="bellIcon">
