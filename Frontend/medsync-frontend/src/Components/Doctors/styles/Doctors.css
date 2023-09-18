@@ -99,12 +99,16 @@ input{
     padding: 10px;
     background-color: #c4dffe;
     width: 150px;
+    /* position: fixed; */
+    transform: scale(1.1);
 }
 .spanDiv3:hover{
     border-radius: 5px;
-    padding: 10px;
+    /* padding: 10px; */
     background-color: #c4dffe;
-    width: 150px;
+    /* width: 150px; */
+    position: fixed;
+    transform: scale(1.1);
 }
 .spanDiv2{
     margin-top: 40px;
