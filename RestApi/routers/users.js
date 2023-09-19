@@ -15,11 +15,111 @@ const storage = multer.diskStorage({
 
 const uplaod = multer({storage});
 
-
+/**
+ * @swagger
+ * /api/v1/users:
+ *   get:
+ *     summary: Get a list of patients
+ *     description: Retrieve a list of users from the database.
+ *     tags:
+ *      - Doctors
+ *     responses:
+ *       '200':
+ *         description: A list of users.
+ *       '500':
+ *         description: Internal server error.
+ */
 userRouter.route('/').get(allUsers);
+
+/**
+ * @swagger
+ * /api/v1/users/{id}:
+ *   get:
+ *     summary: Gets a single doctor or nurse
+ *     description: Retrieve a list of users from the database.
+ *     tags:
+ *      - Doctors
+ *     parameters:
+ *       - name: id
+ *         in: path
+ *         required: true
+ *         schema:
+ *           type: integer
+ *         description: User ID
+ *     responses:
+ *       '200':
+ *         description: A list of users.
+ *       '500':
+ *         description: Internal server error.
+ */
 userRouter.get('/:id', getSingleUser);
+/**
+ * @swagger
+ * /api/v1/users/{id}:
+ *   put:
+ *     summary: updates a Doctor or Nurse
+ *     description: Retrieve a list of users from the database.
+ *     tags:
+ *      - Doctors
+ *     parameters:
+ *       - name: id
+ *         in: path
+ *         required: true
+ *         schema:
+ *           type: integer
+ *         description: User ID
+ *     responses:
+ *       '200':
+ *         description: A list of users.
+ *       '500':
+ *         description: Internal server error.
+ */
 userRouter.put('/:id', authenticationMiddleware, updateUser);
+
+/**
+ * @swagger
+ * /api/v1/users/{id}:
+ *   delete:
+ *     summary: Deletes a user
+ *     description: Retrieve a list of users from the database.
+ *     tags:
+ *      - Doctors
+ *     parameters:
+ *       - name: id
+ *         in: path
+ *         required: true
+ *         schema:
+ *           type: integer
+ *         description: User ID
+ *     responses:
+ *       '200':
+ *         description: A list of users.
+ *       '500':
+ *         description: Internal server error.
+ */
 userRouter.delete('/:id', authenticationMiddleware, deleteUser);
+
+/**
+ * @swagger
+ * /api/v1/users/{id}/upload-profile-pitcture:
+ *   post:
+ *     summary: updates the profile
+ *     description: Retrieve a list of users from the database.
+ *     tags:
+ *      - Doctors
+ *     parameters:
+ *       - name: id
+ *         in: path
+ *         required: true
+ *         schema:
+ *           type: integer
+ *         description: User ID
+ *     responses:
+ *       '200':
+ *         description: A list of users.
+ *       '500':
+ *         description: Internal server error.
+ */
 userRouter.post('/:id/upload-profile-picture', uplaod.single('profilePicture'),  authenticationMiddleware, uploadProfilePicture);
 
 module.exports = userRouter;

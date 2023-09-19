@@ -3,7 +3,7 @@ const swaggerJSDoc = require('swagger-jsdoc');
 const swaggerDefinition = {
   openapi: '3.0.0',
   info: {
-    title: 'Express API Documentation',
+    title: 'MedSync API Documentation',
     version: '1.0.0',
     description: 'Documentation for your MedSync Api',
   },
