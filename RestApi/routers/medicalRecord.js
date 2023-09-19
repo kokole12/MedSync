@@ -51,7 +51,7 @@ router.route('/').post(authenticationMiddleware, createMedicalRecord);
  *         in: path
  *         required: true
  *         schema:
- *           type: integer
+ *           type: string
  *         description: User ID
  *     responses:
  *       '200':
