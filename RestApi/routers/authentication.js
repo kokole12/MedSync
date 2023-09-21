@@ -79,7 +79,7 @@ authRouter.route('/login').post(login);
 
 /**
  * @swagger
- * /api/v1/patient:
+ * /api/v1/auth/logout:
  *   post:
  *     summary: Get a list of patients
  *     description: Retrieve a list of users from the database.
@@ -91,21 +91,6 @@ authRouter.route('/login').post(login);
  *         application/json:
  *           schema:
  *             type: object
- *             properties:
- *               firstname:
- *                 type: string
- *               lastname:
- *                 type: string
- *               gender:
- *                 type: string
- *               birthdate:
- *                 type: string
- *               contactNumber:
- *                 type: string
- *               email:
- *                 type: string
- *               address:
- *                 type: string
  *     responses:
  *       '200':
  *         description: A list of users.
