@@ -1,9 +1,5 @@
 import React from "react";
-import 'bootstrap/dist/css/bootstrap.min.css';
-import 'bootstrap/dist/js/bootstrap.bundle.min';
 import "./styles/Doctors.css";
-import $ from 'jquery';
-import Popper from 'popper.js';
 import medsync14 from "../Images/medsync14.jpeg";
 import news1 from "../Images/news-1.jpeg";
 import news2 from "../Images/news-2.jpeg";
