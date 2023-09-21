@@ -42,10 +42,8 @@ const Doctors = () => {
           </span>
 
 	  <li class="nav-item dropdown pe-3">
-	  <a class="nav-link nav-profile d-flex align-items-center pe-0" href="" data-bs-toggle="dropdown" aria-expanded="false">
           <img className="profileDoctor" src={medsync14} alt="medsync14" />
-	  <span class="d-none dropdown-toggle ps-2">Dr. Name</span>
-	  </a> 
+	  <span class="d-none dropdown-toggle ps-2">Dr. Name</span> 
 	  </li>{/* End profile image icon */}
 
 	  <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
@@ -60,10 +58,8 @@ const Doctors = () => {
             </li>
 
             <li>
-              <a class="dropdown-item d-flex align-items-center" href="users-profile.html">
                 <i class="fa-solid fa-person"></i>
                 <span>My Profile</span>
-              </a>
             </li>
 
 	  <li>
@@ -71,10 +67,8 @@ const Doctors = () => {
             </li>
 
             <li>
-              <a class="dropdown-item d-flex align-items-center" href="users-profile.html">
                 <i class="fa-solid fa-gear"></i>
                 <span>Account Settings</span>
-              </a>
             </li>
 
             <li>
@@ -82,10 +76,8 @@ const Doctors = () => {
             </li>
 
             <li>
-              <a class="dropdown-item d-flex align-items-center" href="pages-faq.html">
                 <i class="fa-solid fa-circle-question"></i>
                 <span>Need Help?</span>
-              </a>
             </li>
 
             <li>
@@ -93,10 +85,8 @@ const Doctors = () => {
             </li>
 
             <li>
-              <a class="dropdown-item d-flex align-items-center" href="#">
                 <i class="fa-solid fa-arrow-right-from-bracket"></i>
                 <span>Sign Out</span>
-              </a>
             </li>
 
           </ul> {/* End profile dropdown items */}
