@@ -1,9 +1,5 @@
 import React from "react";
-import 'bootstrap/dist/css/bootstrap.min.css';
-import 'bootstrap/dist/js/bootstrap.bundle.min';
 import "./styles/Doctors.css";
-import $ from 'jquery';
-import Popper from 'popper.js';
 import medsync14 from "../Images/medsync14.jpeg";
 import news1 from "../Images/news-1.jpeg";
 import news2 from "../Images/news-2.jpeg";
@@ -47,10 +43,8 @@ const Doctors = () => {
           </span>
 
 	  <li class="nav-item dropdown pe-3">
-	  <a class="nav-link nav-profile d-flex align-items-center pe-0" href="" data-bs-toggle="dropdown" aria-expanded="false">
           <img className="profileDoctor" src={medsync14} alt="medsync14" />
-	  <span class="d-none dropdown-toggle ps-2">Dr. Name</span>
-	  </a> 
+	  <span class="d-none dropdown-toggle ps-2">Dr. Name</span> 
 	  </li>{/* End profile image icon */}
 
 	  <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
@@ -65,10 +59,8 @@ const Doctors = () => {
             </li>
 
             <li>
-              <a class="dropdown-item d-flex align-items-center" href="users-profile.html">
                 <i class="fa-solid fa-person"></i>
                 <span>My Profile</span>
-              </a>
             </li>
 
 	  <li>
@@ -76,10 +68,8 @@ const Doctors = () => {
             </li>
 
             <li>
-              <a class="dropdown-item d-flex align-items-center" href="users-profile.html">
                 <i class="fa-solid fa-gear"></i>
                 <span>Account Settings</span>
-              </a>
             </li>
 
             <li>
@@ -87,10 +77,8 @@ const Doctors = () => {
             </li>
 
             <li>
-              <a class="dropdown-item d-flex align-items-center" href="pages-faq.html">
                 <i class="fa-solid fa-circle-question"></i>
                 <span>Need Help?</span>
-              </a>
             </li>
 
             <li>
@@ -98,10 +86,8 @@ const Doctors = () => {
             </li>
 
             <li>
-              <a class="dropdown-item d-flex align-items-center" href="#">
                 <i class="fa-solid fa-arrow-right-from-bracket"></i>
                 <span>Sign Out</span>
-              </a>
             </li>
 
           </ul> {/* End profile dropdown items */}
@@ -117,19 +103,19 @@ const Doctors = () => {
           </div>
           <div className="spanDiv1">
           <i class="fa-brands fa-squarespace" style={{color: "#222e3a"}}></i>
-            <span className="sideNavIcon">Component</span>
+            <span className="sideNavIcon">Patients</span>
           </div>
           <div className="spanDiv1">
           <i class="fa-solid fa-list" style={{color: "#222e3a"}}></i>
-            <span className="sideNavIcon">Form</span>
+            <span className="sideNavIcon">Refer patient</span>
           </div>
           <div className="spanDiv1">
           <i class="fa-solid fa-table" style={{color: "#222e3a"}}></i>
-            <span className="sideNavIcon">Table</span>
+            <span className="sideNavIcon">Treatment history</span>
           </div>
           <div className="spanDiv1">
           <i class="fa-solid fa-chart-simple" style={{color: "#222e3a"}}></i>
-            <span className="sideNavIcon">Charts</span>
+            <span className="sideNavIcon">Create patient file</span>
           </div>
 
           <div className="spanDiv2">

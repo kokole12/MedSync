@@ -8,7 +8,7 @@ const authRouter = express.Router();
  * @swagger
  * /api/v1/auth/register:
  *   post:
- *     summary: Get a list of patients
+ *     summary: Signs up a new doctor
  *     description: Retrieve a list of users from the database.
  *     tags:
  *      - Authentication
@@ -54,7 +54,7 @@ authRouter.route('/register').post(register);
  * @swagger
  * /api/v1/auth/login:
  *   post:
- *     summary: Get a list of patients
+ *     summary: signs in a new doctor
  *     description: Retrieve a list of users from the database.
  *     tags:
  *      - Authentication
@@ -79,9 +79,9 @@ authRouter.route('/login').post(login);
 
 /**
  * @swagger
- * /api/v1/patient:
+ * /api/v1/auth/logout:
  *   post:
- *     summary: Get a list of patients
+ *     summary: Logs out a doctor
  *     description: Retrieve a list of users from the database.
  *     tags:
  *      - Authentication
@@ -91,21 +91,6 @@ authRouter.route('/login').post(login);
  *         application/json:
  *           schema:
  *             type: object
- *             properties:
- *               firstname:
- *                 type: string
- *               lastname:
- *                 type: string
- *               gender:
- *                 type: string
- *               birthdate:
- *                 type: string
- *               contactNumber:
- *                 type: string
- *               email:
- *                 type: string
- *               address:
- *                 type: string
  *     responses:
  *       '200':
  *         description: A list of users.
