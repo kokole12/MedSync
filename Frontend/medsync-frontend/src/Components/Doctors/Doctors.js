@@ -9,39 +9,103 @@ import news1 from "../Images/news-1.jpeg";
 import news2 from "../Images/news-2.jpeg";
 import news3 from "../Images/news-3.jpeg";
 import NavBar from "../NavBar/NavBar.js";
+import { Link } from 'react-router-dom';
 
 const Doctors = () => {
   return (
     <div class="container-fluid">
       <div className="navDoctor">
-        <h1 className="Doctorh1">MedSync Admin</h1>
-        <div className="SearchInput">
-          <span className="NavIcon">
-            <i class="fa-solid fa-bars fa-xl" style={{ color: "#6b94db" }}></i>
-          </span>
+	  <div class="d-flex align-items-center justify-content-between mx-1">
+      <a href="../Landing/Landing.js" className="Doctorh1" class="logo d-flex align-items-center">MedSync Admin</a>
 
-          <input placeholder="Search"></input>
+      <i className="NavIcon" class="fa-solid fa-bars fa-xl toggle-sidebar-btn"></i>
+    </div> {/* End title */}
+
+	  <div className="SearchInput" class="search">
+	  <input type="text" name="query" placeholder="Search" title="Enter search keyword" />
+	  
           <span className="searchIcon">
             <i
               class="fa-solid fa-magnifying-glass"
               style={{ color: "#d9dbdd" }}
             ></i>
           </span>
-        </div>
+        </div> {/* End searchbar */}
+
         <div className="BMP">
-          <span className="bellIcon">
+          <span className="bellIcon" class="d-flex align-self-center d-md-block dropdown-toggle ps-2">
             <i
               class="fa-regular fa-bell fa-xl"
               style={{ color: "#6398f2" }}
             ></i>
           </span>
-          <span className="messageIcon">
+          <span className="messageIcon" class="d-flex align-self-center d-md-block dropdown-toggle ps-2">
             <i
               class="fa-regular fa-message fa-xl"
               style={{ color: "#7e9dd3" }}
             ></i>
           </span>
+
+	  <li class="nav-item dropdown pe-3">
+	  <a class="nav-link nav-profile d-flex align-items-center pe-0" href="" data-bs-toggle="dropdown" aria-expanded="false">
           <img className="profileDoctor" src={medsync14} alt="medsync14" />
+	  <span class="d-none dropdown-toggle ps-2">Dr. Name</span>
+	  </a> 
+	  </li>{/* End profile image icon */}
+
+	  <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
+
+            <li class="dropdown-header">
+              <h6>Name</h6>
+              <span>Medical Doctor</span>
+            </li>
+
+            <li>
+              <hr class="dropdown-divider" />
+            </li>
+
+            <li>
+              <a class="dropdown-item d-flex align-items-center" href="users-profile.html">
+                <i class="fa-solid fa-person"></i>
+                <span>My Profile</span>
+              </a>
+            </li>
+
+	  <li>
+              <hr class="dropdown-divider" />
+            </li>
+
+            <li>
+              <a class="dropdown-item d-flex align-items-center" href="users-profile.html">
+                <i class="fa-solid fa-gear"></i>
+                <span>Account Settings</span>
+              </a>
+            </li>
+
+            <li>
+              <hr class="dropdown-divider" />
+            </li>
+
+            <li>
+              <a class="dropdown-item d-flex align-items-center" href="pages-faq.html">
+                <i class="fa-solid fa-circle-question"></i>
+                <span>Need Help?</span>
+              </a>
+            </li>
+
+            <li>
+              <hr class="dropdown-divider" />
+            </li>
+
+            <li>
+              <a class="dropdown-item d-flex align-items-center" href="#">
+                <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                <span>Sign Out</span>
+              </a>
+            </li>
+
+          </ul> {/* End profile dropdown items */}
+          
         </div>
       </div>
 
@@ -81,13 +145,20 @@ const Doctors = () => {
             <span className="sideNavIcon">Contact</span>
           </div>
           <div className="spanDiv3">
+          <Link to='/Register' >
           <i class="fa-solid fa-rectangle-list" style={{color: "#222e3a"}}></i>
             <span className="sideNavIcon">Register</span>
+            </Link>
           </div>
+
+          
           <div className="spanDiv3">
+          <Link to='/Login'>
           <i class="fa-solid fa-right-to-bracket" style={{color: "#222e3a"}}></i>
             <span className="sideNavIcon">Login</span>
+            </Link>
           </div>
+          
         </div>
         <div className="mainBody">
           <h2>Dashboard</h2>

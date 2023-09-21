@@ -108,6 +108,33 @@ patientRouter.get('/:id', authenticationMiddleware, getSinglePatient)
  */
 patientRouter.put('/:id', authenticationMiddleware, updatePatient);
 
+/**
+ * @swagger
+ * /api/v1/patient/search:
+ *   post:
+ *     summary: Get data with two query parameters
+ *     description: Retrieve data using two query parameters.
+ *     tags:
+ *      - Patients
+ *     parameters:
+ *       - in: query
+ *         name: phoneNumber
+ *         required: false
+ *         description: Description of the first query parameter.
+ *         schema:
+ *           type: string
+ *       - in: query
+ *         name: email
+ *         required: false
+ *         description: Description of the second query parameter.
+ *         schema:
+ *           type: number
+ *     responses:
+ *       200:
+ *         description: OK
+ *       400:
+ *         description: Bad Request
+ */
 patientRouter.post('/search', searchPatient);
 
 module.exports = patientRouter;

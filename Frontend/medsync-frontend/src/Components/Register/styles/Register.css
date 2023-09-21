@@ -3,10 +3,11 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    height: 100%;
     background-color: whitesmoke;
 
 }
+
 .innerForm{
     background-color: white;
     /* padding: 20px; */
@@ -14,23 +15,33 @@
     padding-right: 20px;
     border-radius: 10px;
 }
+
 .head{
     color: rgb(39, 39, 77);
 }
+
 .account{
     text-align: center;
     color: rgb(39, 39, 77);
 }
+
 .enter{
     text-align: center;
 }
+
+h1 {
+	padding-top: 3%;
+}
+
 label{
     margin-top: 20px;
 }
+
 input{
     margin-top: 5px;
     width: 350px;
 }
+
 button{
     width: 350px;
     padding: 12px;
@@ -40,13 +51,16 @@ button{
     border: none;
     border-radius: 10px;
 }
+
 .checkbox{
     display: inline;
     font-size: 12px;
 }
+
 .checkboxInput{
     width: 20px;
 }
+
 form{
     display: flex;
     flex-direction: column;

@@ -47,9 +47,12 @@ const searchPatient = async (req, res) => {
         queryObject
         // $text: { $search: searchTerm, $diacriticSensitive: true },
     });
-
+    if (Object.keys(patient).length === 0) {
+        res.status(400).json({ error: `No patient with this contact`})
+    }
     if (!patient) {
         res.status(404).json('No patient found');
+        return;
     }
 
     res.json({patient});

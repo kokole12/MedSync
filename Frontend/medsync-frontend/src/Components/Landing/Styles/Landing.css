@@ -7,7 +7,7 @@
     width: 90%;
     justify-content: space-between;
     padding: 0 5% 0 5%;
-    background-color: #CEE6F3;
+    /* background-color: #CEE6F3; */
 
 }
 
@@ -23,6 +23,7 @@ a {
 
 a:hover {
 	color: #068FFF;
+  text-decoration: none;
 }
 
 li .signup {

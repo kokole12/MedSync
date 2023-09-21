@@ -8,6 +8,7 @@ import MedSync5 from '../Images/medsync16.jpg';
 import MedSync6 from '../Images/medsync17.png';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import NavBar from '../NavBar/NavBar';
+import { Link } from 'react-router-dom';
 
 
 const Landing = () => {
@@ -30,10 +31,13 @@ const Landing = () => {
                             <h1 className='num'>200k+</h1>
                             <p className='text'>Patients</p>
                         </div>
+                        <Link to='/Doctors' >
                         <div className='NumText2'>
                             <h1 className='num'>50+</h1>
                             <p className='text'>Doctors</p>
                         </div>
+                        </Link>
+
                         <div className='NumText3'>
                             <h1 className='num'>20+</h1>
                             <p className='text'>Nurse</p>

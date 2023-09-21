@@ -22,9 +22,6 @@ const Login = () => {
                 <input className='checkboxInput' type='checkbox' />
                 Remember me
                 </label>
-                
-                
-
                 <button>Login</button>
             </form>
             <p>Don't have account? Create an account</p>
