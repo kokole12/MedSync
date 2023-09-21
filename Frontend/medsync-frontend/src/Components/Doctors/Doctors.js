@@ -32,19 +32,79 @@ const Doctors = () => {
         </div> {/* End searchbar */}
 
         <div className="BMP">
-          <span className="bellIcon">
+          <span className="bellIcon" class="d-flex align-self-center d-md-block dropdown-toggle ps-2">
             <i
               class="fa-regular fa-bell fa-xl"
               style={{ color: "#6398f2" }}
             ></i>
           </span>
-          <span className="messageIcon">
+          <span className="messageIcon" class="d-flex align-self-center d-md-block dropdown-toggle ps-2">
             <i
               class="fa-regular fa-message fa-xl"
               style={{ color: "#7e9dd3" }}
             ></i>
           </span>
+
+	  <li class="nav-item dropdown pe-3">
+	  <a class="nav-link nav-profile d-flex align-items-center pe-0" href="" data-bs-toggle="dropdown" aria-expanded="false">
           <img className="profileDoctor" src={medsync14} alt="medsync14" />
+	  <span class="d-none dropdown-toggle ps-2">Dr. Name</span>
+	  </a> 
+	  </li>{/* End profile image icon */}
+
+	  <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
+
+            <li class="dropdown-header">
+              <h6>Name</h6>
+              <span>Medical Doctor</span>
+            </li>
+
+            <li>
+              <hr class="dropdown-divider" />
+            </li>
+
+            <li>
+              <a class="dropdown-item d-flex align-items-center" href="users-profile.html">
+                <i class="fa-solid fa-person"></i>
+                <span>My Profile</span>
+              </a>
+            </li>
+
+	  <li>
+              <hr class="dropdown-divider" />
+            </li>
+
+            <li>
+              <a class="dropdown-item d-flex align-items-center" href="users-profile.html">
+                <i class="fa-solid fa-gear"></i>
+                <span>Account Settings</span>
+              </a>
+            </li>
+
+            <li>
+              <hr class="dropdown-divider" />
+            </li>
+
+            <li>
+              <a class="dropdown-item d-flex align-items-center" href="pages-faq.html">
+                <i class="fa-solid fa-circle-question"></i>
+                <span>Need Help?</span>
+              </a>
+            </li>
+
+            <li>
+              <hr class="dropdown-divider" />
+            </li>
+
+            <li>
+              <a class="dropdown-item d-flex align-items-center" href="#">
+                <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                <span>Sign Out</span>
+              </a>
+            </li>
+
+          </ul> {/* End profile dropdown items */}
+          
         </div>
       </div>
 
