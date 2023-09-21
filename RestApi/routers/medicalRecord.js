@@ -9,7 +9,7 @@ const router = express.Router();
  * @swagger
  * /api/v1/medical:
  *   post:
- *     summary: Get a list of patients
+ *     summary: Create a new medical record
  *     description: Retrieve a list of users from the database.
  *     tags:
  *      - Medical Records
