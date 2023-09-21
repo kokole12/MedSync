@@ -8,7 +8,7 @@ const authRouter = express.Router();
  * @swagger
  * /api/v1/auth/register:
  *   post:
- *     summary: Get a list of patients
+ *     summary: Signs up a new doctor
  *     description: Retrieve a list of users from the database.
  *     tags:
  *      - Authentication
@@ -54,7 +54,7 @@ authRouter.route('/register').post(register);
  * @swagger
  * /api/v1/auth/login:
  *   post:
- *     summary: Get a list of patients
+ *     summary: signs in a new doctor
  *     description: Retrieve a list of users from the database.
  *     tags:
  *      - Authentication
@@ -81,7 +81,7 @@ authRouter.route('/login').post(login);
  * @swagger
  * /api/v1/auth/logout:
  *   post:
- *     summary: Get a list of patients
+ *     summary: Logs out a doctor
  *     description: Retrieve a list of users from the database.
  *     tags:
  *      - Authentication
