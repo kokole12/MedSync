@@ -12,8 +12,20 @@ function App() {
    <Router> 
    	<div className="App">
 	  <Switch>
-	  	<Route path="/">
+	  	<Route path="../Landing/Landing.js">
 	  		<Landing />
+	  	</Route>
+
+	  	<Route path="../Doctors/Doctors.js">
+	  		<Doctors />
+	  	</Route>
+
+	  	<Route path="../Login/Login.js">
+	  		<Login />
+	  	</Route>
+
+	  	<Route path="../Register/Register.js">
+	  		<Register />
 	  	</Route>
 	  </Switch>
       	  {/* <Landing /> */}
