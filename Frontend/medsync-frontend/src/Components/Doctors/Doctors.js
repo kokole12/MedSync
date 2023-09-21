@@ -112,19 +112,19 @@ const Doctors = () => {
           </div>
           <div className="spanDiv1">
           <i class="fa-brands fa-squarespace" style={{color: "#222e3a"}}></i>
-            <span className="sideNavIcon">Component</span>
+            <span className="sideNavIcon">Patients</span>
           </div>
           <div className="spanDiv1">
           <i class="fa-solid fa-list" style={{color: "#222e3a"}}></i>
-            <span className="sideNavIcon">Form</span>
+            <span className="sideNavIcon">Refer patient</span>
           </div>
           <div className="spanDiv1">
           <i class="fa-solid fa-table" style={{color: "#222e3a"}}></i>
-            <span className="sideNavIcon">Table</span>
+            <span className="sideNavIcon">Treatment history</span>
           </div>
           <div className="spanDiv1">
           <i class="fa-solid fa-chart-simple" style={{color: "#222e3a"}}></i>
-            <span className="sideNavIcon">Charts</span>
+            <span className="sideNavIcon">Create patient file</span>
           </div>
 
           <div className="spanDiv2">

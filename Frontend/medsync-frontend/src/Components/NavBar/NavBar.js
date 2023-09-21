@@ -10,7 +10,7 @@ const NavBar = () => {
         <div>
           <ul>
             <li>
-              <a href="#">Home</a>
+              <a href="../Landing/Landing.js">Home</a>
             </li>
             <li>
               <a href="#">Services</a>
@@ -19,13 +19,13 @@ const NavBar = () => {
               <a href="#">About</a>
             </li>
             <li>
-              <a href="#">Doctors</a>
+              <a href="../Doctors/Doctors.js">Doctors</a>
             </li>
             <li>
-              <a href="#">Login</a>
+              <a href="../Login/Login.js">Login</a>
             </li>
             <li className="SignUp">
-              <a href="#" class="signup">
+              <a href="Register/Register.js" class="signup">
                 Sign Up
               </a>
             </li>
