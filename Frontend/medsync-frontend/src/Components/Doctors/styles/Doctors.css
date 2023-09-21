@@ -116,12 +116,9 @@ input{
     color: gray;
 }
 .SRC{
-    /* display: flex; */
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* Create three equal-width columns */
+    grid-template-columns: repeat(3, 1fr);
     gap: 20px; 
-
-    /* width: 90%; */
 }
 .BelowDashboard{
     display: flex;
