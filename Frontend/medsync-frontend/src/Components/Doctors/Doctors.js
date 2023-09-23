@@ -1,102 +1,70 @@
-import React from "react";
+import React, { useState } from "react";
 import "./styles/Doctors.css";
 import medsync14 from "../Images/medsync14.jpeg";
 import news1 from "../Images/news-1.jpeg";
 import news2 from "../Images/news-2.jpeg";
 import news3 from "../Images/news-3.jpeg";
 import NavBar from "../NavBar/NavBar.js";
-import { Link } from 'react-router-dom';
+import { Link, useNavigate, useLocation } from 'react-router-dom';
 
 const Doctors = () => {
+
+  const [navIcon, setNavIcon] = useState(false);
+
+  function handleNavClick () {
+    setNavIcon(!navIcon);
+  }
+
+  const sideNavClass = navIcon ? "sideNavActive" : "sideNav";
+
+  const mainBodyClass = navIcon ? "mainBody2" : "mainBody";
+  
   return (
-    <div class="container-fluid">
-      <div className="navDoctor">
-	  <div class="d-flex align-items-center justify-content-between mx-1">
-      <a href="../Landing/Landing.js" className="Doctorh1" class="logo d-flex align-items-center">MedSync Admin</a>
+    <div>
+    <div className="navDoctor">
+	  <div>
+      <h1 className="Doctorh1">MedSync</h1>
+    </div>
 
-      <i className="NavIcon" class="fa-solid fa-bars fa-xl toggle-sidebar-btn"></i>
-    </div> {/* End title */}
-
-	  <div className="SearchInput" class="search">
-	  <input type="text" name="query" placeholder="Search" title="Enter search keyword" />
+	  <div className="SearchInput">
+    <div className="NavDiv">
+    <i className="NavIcon" onClick={handleNavClick} class="fa-solid fa-bars fa-xl toggle-sidebar-btn"></i>
+    </div>
+    <div>
+    <input type="text" name="query" placeholder="Search" title="Enter search keyword" />
 	  
-          <span className="searchIcon">
-            <i
-              class="fa-solid fa-magnifying-glass"
-              style={{ color: "#d9dbdd" }}
-            ></i>
-          </span>
-        </div> {/* End searchbar */}
+    <span className="searchIcon">
+      <i
+        class="fa-solid fa-magnifying-glass"
+        style={{ color: "#d9dbdd" }}
+      ></i>
+    </span>
+    </div>
+        </div>
 
         <div className="BMP">
-          <span className="bellIcon" class="d-flex align-self-center d-md-block dropdown-toggle ps-2">
+          <span className="bellIcon">
             <i
               class="fa-regular fa-bell fa-xl"
               style={{ color: "#6398f2" }}
             ></i>
           </span>
-          <span className="messageIcon" class="d-flex align-self-center d-md-block dropdown-toggle ps-2">
+          <span className="messageIcon">
             <i
               class="fa-regular fa-message fa-xl"
               style={{ color: "#7e9dd3" }}
             ></i>
           </span>
 
-	  <li class="nav-item dropdown pe-3">
+	      
           <img className="profileDoctor" src={medsync14} alt="medsync14" />
-	  <span class="d-none dropdown-toggle ps-2">Dr. Name</span> 
-	  </li>{/* End profile image icon */}
-
-	  <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
-
-            <li class="dropdown-header">
-              <h6>Name</h6>
-              <span>Medical Doctor</span>
-            </li>
-
-            <li>
-              <hr class="dropdown-divider" />
-            </li>
-
-            <li>
-                <i class="fa-solid fa-person"></i>
-                <span>My Profile</span>
-            </li>
-
-	  <li>
-              <hr class="dropdown-divider" />
-            </li>
-
-            <li>
-                <i class="fa-solid fa-gear"></i>
-                <span>Account Settings</span>
-            </li>
-
-            <li>
-              <hr class="dropdown-divider" />
-            </li>
-
-            <li>
-                <i class="fa-solid fa-circle-question"></i>
-                <span>Need Help?</span>
-            </li>
-
-            <li>
-              <hr class="dropdown-divider" />
-            </li>
-
-            <li>
-                <i class="fa-solid fa-arrow-right-from-bracket"></i>
-                <span>Sign Out</span>
-            </li>
-
-          </ul> {/* End profile dropdown items */}
-          
+	        <span className="Drp">Dr. Name</span> 
+	      
         </div>
       </div>
 
       <div className="Body">
-        <div className="sideNav">
+        <div className={sideNavClass}>
           <div className="spanDiv">
           <i class="fa-solid fa-square-poll-horizontal" style={{color: "#222e3a"}}></i>
             <span className="sideNavIcon">Dashboard</span>
@@ -122,16 +90,19 @@ const Doctors = () => {
             <span>PAGES</span>
           </div>
 
+          <Link className="link" to='/Profile'>
           <div className="spanDiv3">
           <i class="fa-solid fa-user" style={{color: "#222e3a"}}></i>
             <span className="sideNavIcon">Profile</span>
           </div>
+          </Link>
+
           <div className="spanDiv3">
           <i class="fa-regular fa-address-card" style={{color: "#222e3a"}}></i>
             <span className="sideNavIcon">Contact</span>
           </div>
           <div className="spanDiv3">
-          <Link to='/Register' >
+          <Link className="link" to='/Register' >
           <i class="fa-solid fa-rectangle-list" style={{color: "#222e3a"}}></i>
             <span className="sideNavIcon">Register</span>
             </Link>
@@ -139,15 +110,15 @@ const Doctors = () => {
 
           
           <div className="spanDiv3">
-          <Link to='/Login'>
+          <Link className="link" to='/Login'>
           <i class="fa-solid fa-right-to-bracket" style={{color: "#222e3a"}}></i>
             <span className="sideNavIcon">Login</span>
             </Link>
           </div>
           
         </div>
-        <div className="mainBody">
-          <h2>Dashboard</h2>
+        <div className={mainBodyClass}>
+          <h2 id="mainBodyh2">Dashboard</h2>
           <p className="mainBodyP">Home / Dashboard</p>
           <div className="dashboardActivities">
           <div className="BelowDashboard">
@@ -209,6 +180,7 @@ const Doctors = () => {
 
             </div>
 
+            {/* <div className="RRT"> */}
             <div className="Report">
               <h4>
                 Report <span className="spanReport"> / Today</span>
@@ -220,7 +192,7 @@ const Doctors = () => {
               <p>20</p>
               <p>0</p>
             </div>
-            <div className="RecentSale">
+            <div className="RecentSale" id="RecentSale">
               <h4>
                 Recent Sale<span className="spanReport"> / Today</span>
               </h4>
@@ -272,10 +244,11 @@ const Doctors = () => {
                 Top Sales <span className="spanReport"> / Today</span>
               </h4>
             </div>
+            {/* </div> */}
           </div>
 
           {/* </div> */}
-          <div>
+          <div className="RANU">
             <div className="Activity">
             <h4>Recent Activity <span className="spanToday"> | Today</span></h4>
             <p><span className="mins">32 mins</span> Quia quae rerum explicabo officiis beatae</p>

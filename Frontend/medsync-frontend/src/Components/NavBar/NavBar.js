@@ -1,34 +1,45 @@
 import React from "react";
+import { Link, useNavigate, useLocation } from 'react-router-dom';
 import './styles/NavBar.css';
 
 const NavBar = () => {
   return (
     <div>
-      <div className="NavBar" class="NavBar">
+      <div className="NavBar">
         <div>
           <h1 class="Nav-title">MedSync</h1>
         </div>
         <div>
           <ul>
             <li>
-              <a href="../Landing/Landing.js">Home</a>
+            <Link className="link" to='/'>
+              Home
+            </Link>
             </li>
             <li>
-              <a href="#">Services</a>
+              <Link className="link" to='/Services'>
+              Services
+              </Link>
             </li>
             <li>
-              <a href="#">About</a>
+            <Link className="link" to='/About'>
+            About
+            </Link>
             </li>
             <li>
-              <a href="../Doctors/Doctors.js">Doctors</a>
+            <Link className="link" to='/Doctors'>
+            Doctors
+            </Link>
             </li>
             <li>
-              <a href="../Login/Login.js">Login</a>
+            <Link className="link" to='/Login'>
+            Login
+            </Link>
             </li>
             <li className="SignUp">
-              <a href="Register/Register.js" class="signup">
-                Sign Up
-              </a>
+            <Link className="link" to='/Register'>
+            <p className="signupP">SignUp</p>
+            </Link>
             </li>
           </ul>
         </div>

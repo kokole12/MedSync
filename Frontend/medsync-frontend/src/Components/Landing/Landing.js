@@ -24,14 +24,14 @@ const Landing = () => {
                     <p className='text1'>
                         Welcome to MedSync where we help Doctors keep track <br /> of thier patients medical record, and also share <br /> information to make treatment more <br /> convenient.
                     </p>
-                    <button className='GetStarted'><a href="#" class="button-get-started">Get Started</a></button>
+                    <button className='GetStarted'>Get Started</button>
 
                     <div className='NumText'>
                         <div className='NumText1'>
                             <h1 className='num'>200k+</h1>
                             <p className='text'>Patients</p>
                         </div>
-                        <Link to='/Doctors' >
+                        <Link className='link' to='/Doctors' >
                         <div className='NumText2'>
                             <h1 className='num'>50+</h1>
                             <p className='text'>Doctors</p>

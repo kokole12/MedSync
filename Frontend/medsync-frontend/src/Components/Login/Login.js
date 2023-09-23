@@ -1,7 +1,24 @@
-import React from 'react';
+import React, { useState, useEffect} from 'react';
+import axios from "axios";
 import './styles/Login.css';
+import { useNavigate, Link } from 'react-router-dom';
 
 const Login = () => {
+
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+
+  async function submit(e){
+    e.preventDefault();
+
+    try{
+      await axios.post("http://localhost:8000/", {
+        email,password
+      })
+    }catch(e){
+      console.log(e);
+    }
+  }
   return (
     <div className='RegisterForm'>
     
@@ -12,19 +29,19 @@ const Login = () => {
             <p className='enter'>Enter your username & password to login</p>
             <form action='' method='POST'>
 
-                <label>username</label>
-                <input type='text' ></input>
+                <label>Email</label>
+                <input className='Input' type='email' onChange={(e) =>{setEmail(e.target.value)} } ></input>
 
                 <label>Password</label>
-                <input type='password' />
+                <input className='Input' type='password' onChange={(e) =>{setPassword(e.target.value)} } />
                 
                 <label className='checkbox' >
                 <input className='checkboxInput' type='checkbox' />
                 Remember me
                 </label>
-                <button>Login</button>
+                <button onClick={submit}>Login</button>
             </form>
-            <p>Don't have account? Create an account</p>
+            <p>Don't have account? <Link to='/Register'>Create an account</Link></p>
         </div>
     </div>
 
@@ -32,4 +49,4 @@ const Login = () => {
   )
 }
 
-export default Login
+export default Login;

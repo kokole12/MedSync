@@ -1,0 +1,79 @@
+.ProfileImage{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
+.Profile{
+    display: flex;
+    justify-content: space-between;
+}
+.ProfileDiv1{
+    width: 600px;
+    height: 300px;
+    background-color: whitesmoke;
+    /* background-color: white; */
+    border-radius: 10px;
+    text-align: center;
+    padding-top: 20px;
+}
+.mainProfile{
+    /* background-color: whitesmoke; */
+    background-color: white;
+    height: 100vh;
+    margin-top: 50px;
+    padding-left: 20px;
+    padding-right: 20px;
+
+}
+.ProfileAbout{
+    width: 70%;
+    height: 600px;
+    background-color: whitesmoke;
+    border-radius: 10px;
+    margin-left: 50px;
+    padding: 20px;
+}
+.Details{
+    display: flex;
+}
+.ProfileP{
+    color: gray;
+}
+.Details p{
+    margin-left: 150px;
+    margin-top: 22px;
+}
+.followIcon i{
+    margin-right: 10px;
+}
+
+@media (max-width: 900px) {
+    .Profile{
+        display: flex;
+        flex-direction: column;
+    }
+    .ProfileAbout{
+        margin-top: 30px;
+        width: 100%;
+        margin-left: 0px;
+        margin-bottom: 30px;
+    }
+    .ProfileDiv1{
+        width: 100%;
+      /* margin-right: 50px; */
+    }
+    .Details p{
+        margin-left: 50px;
+        font-size: 13px;
+        margin-top: 20px;
+        
+    }
+    .Details h4{
+        /* font-size: 12px; */
+        width: 80px;
+        margin-top: 21px;
+    }
+    .Details{
+        font-size: 15px;
+    }
+}
