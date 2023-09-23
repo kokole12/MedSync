@@ -7,7 +7,6 @@ const User = require('../models/user');
 const createMedicalRecord = async (req, res) => {
     console.log(req.body);
     const authenticatedUserId = req.user.userId;
-    console.log(authenticatedUserId);
     const {diagnosis, treatmentPlan, medications, medicalHistory, patient} = req.body;
     const patientId = new mongoose.Types.ObjectId(patient);
 
@@ -31,12 +30,7 @@ const createMedicalRecord = async (req, res) => {
 }
 
 const getMedicalRecords = async (req, res) => {
-    const medicalRecords = await medicalRecordModel.find({});
-    for (const medicalRecord of medicalRecords) {
-        const patientId = medicalRecord.patient;
-        const id = patientId._id.toString()
-        const patient = await patientModel.findOne({ _id: id});
-    }
+    const medicalRecords = await medicalRecordModel.find({}).populate('patient').populate('user');
     res.status(200).json(medicalRecords);
 }
 
