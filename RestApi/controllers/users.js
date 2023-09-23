@@ -1,5 +1,8 @@
 const { StatusCodes } = require('http-status-codes');
 const User = require('../models/user');
+const Queue = require('bull');
+const nodemailer = require('nodemailer');
+const redis = require('redis');
 
 const allUsers = async (req, res) => {
     const users = await User.find({});
