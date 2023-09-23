@@ -60,7 +60,7 @@ const getPatientMedicalRecord = async (req, res) => {
         return;
     }
 
-    const medicalRecord = await medicalRecordModel.findById(patientId);
+    const medicalRecord = await medicalRecordModel.findById(patientId).populate({path:'patient', options: {strict: false}}).populate({path: 'user', options: {strict: false}});
     if (!medicalRecord) {
         res.status(404).json({error: "No medical records"});
         return;

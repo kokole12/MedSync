@@ -128,7 +128,7 @@ patientRouter.put('/:id', authenticationMiddleware, updatePatient);
  *         required: false
  *         description: Description of the second query parameter.
  *         schema:
- *           type: number
+ *           type: string
  *     responses:
  *       200:
  *         description: OK
