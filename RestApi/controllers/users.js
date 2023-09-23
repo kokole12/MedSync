@@ -45,22 +45,30 @@ const deleteUser = async (req, res) => {
 }
 
 const uploadProfilePicture = async (req, res) => {
-    const {id: userId} = req.params;
+    const { id: userId } = req.params;
     const authenticatedUserId = req.user.userId;
-    if (userId !== authenticatedUserId) {
-        res.status(StatusCodes.UNAUTHORIZED).json({error: 'Unauthorized request'});
-        return;
+  
+    try {
+      if (userId !== authenticatedUserId) {
+        return res.status(StatusCodes.UNAUTHORIZED).json({ error: 'Unauthorized request' });
+      }
+  
+      const user = await User.findById(userId);
+  
+      if (!user) {
+        return res.status(StatusCodes.NOT_FOUND).json({ error: 'No user found' });
+      }
+  
+      user.profile.profilePicture = req.file.path;
+  
+      await user.save();
+  
+      res.status(StatusCodes.OK).json({ Message: 'Profile uploaded successfully' });
+    } catch (error) {
+      console.error(error);
+      res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ error: 'Internal server error' });
     }
-    if (!userId) {
-        res.status(404).json({error: 'No user found'});
-        return;
-    }
-    const profilePicturePath = req.file.path;
-    // To Do: fix the profile image upload
-    await User.findOneAndUpdate(userId, {'profile.profilePicture': profilePicturePath});
-
-    res.status(200).json({Message: 'Profile uploaded successfully'});
-}
+};
 
 module.exports = {
     allUsers,

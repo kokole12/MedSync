@@ -4,16 +4,18 @@ const {allUsers, getSingleUser, updateUser, deleteUser, uploadProfilePicture} = 
 const authenticationMiddleware = require('../middlewares/auth');
  
 const storage = multer.diskStorage({
-    destination: (req, file, cb) => {
-        cb(null, '../uplaods/doctorProfilePictures');
+    destination: function (req, file, cb) {
+      cb(null, 'uploads/');
     },
-    filename: (req, file, cb) => {
-        console.log(file);
-        cb(null, Date.now() + Path.extname(file.originalname));
-    }
-});
-
-const uplaod = multer({storage});
+    filename: function (req, file, cb) {
+      const uniqueSuffix = Date.now() + '-' + Math.round(Math.random() * 1e9);
+      const ext = path.extname(file.originalname);
+      cb(null, uniqueSuffix + ext);
+    },
+  });
+  
+  const upload = multer({ storage: storage });
+  
 
 /**
  * @swagger
