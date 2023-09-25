@@ -122,6 +122,6 @@ userRouter.delete('/:id', authenticationMiddleware, deleteUser);
  *       '500':
  *         description: Internal server error.
  */
-userRouter.post('/:id/upload-profile-picture', uplaod.single('profilePicture'),  authenticationMiddleware, uploadProfilePicture);
+userRouter.post('/:id/upload-profile-picture', upload.single('profilePicture'),  authenticationMiddleware, uploadProfilePicture);
 
 module.exports = userRouter;
