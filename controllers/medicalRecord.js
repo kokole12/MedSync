@@ -52,7 +52,7 @@ const updateMedicalRecord = async (req, res) => {
 }
 
 const getPatientMedicalRecord = async (req, res) => {
-    const {id: patientId} = req.params;
+    const {id: patientId} = req.body;
     const isValidPatient = await patientModel.findById(patientId);
     
     if (!isValidPatient) {
@@ -68,8 +68,24 @@ const getPatientMedicalRecord = async (req, res) => {
     res.status(200).json({medicalRecord});
 }
 
+const deleteMedicalRecord = async (req, res) => {
+    const {id: recordId} = req.params;
+    const authenticatedUserId = req.user.userId;
+    const medicalRecord = await medicalRecordModel.findByIdAndDelete({_id: recordId});
+
+    if (!medicalRecord) {
+        res.status(404).json({error: 'No medical with id '+ recordId});
+        return;
+    }
+
+    
+    res.status(204).json({Message: "deleting medical record"})      
+
+}
 module.exports = {
     createMedicalRecord,
     getPatientMedicalRecord,
-    getMedicalRecords, updateMedicalRecord
+    getMedicalRecords, 
+    updateMedicalRecord,
+    deleteMedicalRecord
 }

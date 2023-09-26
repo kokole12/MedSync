@@ -1,6 +1,11 @@
 const express = require('express');
 const authenticationMiddleware = require('../middlewares/auth');
-const {createMedicalRecord, getPatientMedicalRecord, getMedicalRecords, updateMedicalRecord} = require('../controllers/medicalRecord');
+const {
+    createMedicalRecord,
+    getPatientMedicalRecord,
+    getMedicalRecords,
+    updateMedicalRecord,
+    deleteMedicalRecord} = require('../controllers/medicalRecord');
 const { route } = require('express/lib/router');
 
 const router = express.Router();
@@ -74,7 +79,7 @@ router.get('/', authenticationMiddleware, getMedicalRecords);
  *       '500':
  *         description: Internal server error.
  */
-router.route('/:id').get(getPatientMedicalRecord);
+router.route('/:id/patient').get(getPatientMedicalRecord);
 
 /**
  * @swagger
@@ -98,5 +103,28 @@ router.route('/:id').get(getPatientMedicalRecord);
  *         description: Internal server error.
  */
 router.put('/:id', authenticationMiddleware, updateMedicalRecord);
+
+/**
+ * @swagger
+ * /api/v1/medical/{id}:
+ *   delete:
+ *     summary: Deletes a medical record
+ *     description: Retrieve a list of users from the database.
+ *     tags:
+ *      - Medical Records
+ *     parameters:
+ *       - name: id
+ *         in: path
+ *         required: true
+ *         schema:
+ *           type: integer
+ *         description: User ID
+ *     responses:
+ *       '200':
+ *         description: A list of users.
+ *       '500':
+ *         description: Internal server error.
+ */
+router.delete('/:id', authenticationMiddleware,deleteMedicalRecord);
 
 module.exports = router;
