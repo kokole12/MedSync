@@ -9,8 +9,8 @@ const swaggerDefinition = {
   },
   servers: [
     {
-      url: 'http://localhost:3001', // Replace with your server's URL
-      description: 'Development server',
+      url: 'https://medsyncapi.onrender.com', // Replace with your server's URL
+      description: 'Deployment server',
     },
   ],
   components: {

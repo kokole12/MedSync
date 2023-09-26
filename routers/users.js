@@ -21,7 +21,7 @@ const storage = multer.diskStorage({
  * @swagger
  * /api/v1/users:
  *   get:
- *     summary: Get a list of patients
+ *     summary: Get a list of Docotors
  *     description: Retrieve a list of users from the database.
  *     tags:
  *      - Doctors

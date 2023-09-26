@@ -29,7 +29,7 @@ patientRouter.get('/',authenticationMiddleware,  getAllPatients)
  * @swagger
  * /api/v1/patient:
  *   post:
- *     summary: Get a list of patients
+ *     summary: creates new patient
  *     description: Retrieve a list of users from the database.
  *     tags:
  *      - Patients
@@ -66,7 +66,7 @@ patientRouter.post('/', authenticationMiddleware,createPatient);
  * @swagger
  * /api/v1/patient/{id}:
  *   get:
- *     summary: Get a list of patients
+ *     summary: Gets a single patient
  *     description: Retrieve a list of users from the database.
  *     tags:
  *      - Patients
@@ -89,8 +89,8 @@ patientRouter.get('/:id', authenticationMiddleware, getSinglePatient)
  * @swagger
  * /api/v1/patient/{id}:
  *   put:
- *     summary: Get a list of patients
- *     description: Retrieve a list of users from the database.
+ *     summary: Updates the patient details
+ *     description: Updates a patient.
  *     tags:
  *      - Patients
  *     parameters:
@@ -113,7 +113,7 @@ patientRouter.put('/:id', authenticationMiddleware, updatePatient);
  * /api/v1/patient/search:
  *   post:
  *     summary: Get data with two query parameters
- *     description: Retrieve data using two query parameters.
+ *     description: Searches a patient by email or contact.
  *     tags:
  *      - Patients
  *     parameters:
