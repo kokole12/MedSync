@@ -35,21 +35,21 @@ const getMedicalRecords = async (req, res) => {
 }
 
 const updateMedicalRecord = async (req, res) => {
-    const {id: medicalRecordID} = req.params;
+    const { id: medicalRecordID } = req.params;
     const authenticatedUserId = req.user.userId;
-    if (!medicalRecordID) {
-        res.status(StatusCodes.BAD_REQUEST).json({ error: 'Missing Id'});
+
+    const medicalRecord = await medicalRecordModel.findOneAndUpdate({_id: medicalRecordID}, req.body, {new: true}).populate('user').populate('patient');
+    const userId = medicalRecord.user._id.toString();
+    if (authenticatedUserId !== userId) {
+        res.status(StatusCodes.BAD_REQUEST).json({error: 'You cant perform this task since you did not create the record'});
         return;
     }
-    const medicalRecord = await medicalRecordModel.findByIdAndUpdate(medicalRecordID, req.body, {new: true});
     if (!medicalRecord) {
-        res.status(404).json({error: 'No medical record found'});
+        res.status(404).json({error: "No medical record"});
         return;
     }
-    const doctorId = medicalRecord.doctor;
-    console.log(doctorId)
     res.status(200).json(medicalRecord);
-}
+};
 
 const getPatientMedicalRecord = async (req, res) => {
     const {id: patientId} = req.body;
@@ -71,8 +71,12 @@ const getPatientMedicalRecord = async (req, res) => {
 const deleteMedicalRecord = async (req, res) => {
     const {id: recordId} = req.params;
     const authenticatedUserId = req.user.userId;
-    const medicalRecord = await medicalRecordModel.findByIdAndDelete({_id: recordId});
-
+    const medicalRecord = await medicalRecordModel.findByIdAndDelete({_id: recordId}).populate('patient').populate('user');
+    const userId = medicalRecord.user._id.toString();
+    if (authenticatedUserId !== userId) {
+        res.status(StatusCodes.BAD_REQUEST).json({error: "You cant perfom this task because you didnt create this record"});
+        return;
+    }
     if (!medicalRecord) {
         res.status(404).json({error: 'No medical with id '+ recordId});
         return;
