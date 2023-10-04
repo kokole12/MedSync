@@ -110,7 +110,7 @@ const searchMedicalRecord = async(req, res) => {
         const patientDetails = patient[0];
         const patientId = patientDetails._id.toString();
 
-        const medicalRecord = await medicalRecordModel.find({_id: patientId});
+        const medicalRecord = await medicalRecordModel.find({_id: patientId}).populate('user').populate('patient');
 
         if (medicalRecord.length === 0) {
             res.status(StatusCodes.NOT_FOUND).json({error: 'No medical records'});
