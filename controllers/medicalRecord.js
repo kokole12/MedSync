@@ -116,7 +116,7 @@ const searchMedicalRecord = async(req, res) => {
             res.status(StatusCodes.NOT_FOUND).json({error: 'No medical records'});
             return;
         }
-        res.status(200).json( patient );
+        res.status(200).json( medicalRecord );
     } catch (error) {
         console.error(error);
         res.status(500).json({ error: 'Error searching for medical records' });
