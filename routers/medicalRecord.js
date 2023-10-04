@@ -59,7 +59,7 @@ router.route('/').post(authenticationMiddleware, createMedicalRecord);
 router.get('/', authenticationMiddleware, getMedicalRecords);
 /**
  * @swagger
- * /api/v1/medical/{id}:
+ * /api/v1/medical/{patientID}:
  *   get:
  *     summary: Gets medical records of the patient
  *     description: Retrieve a list of users from the database.
@@ -78,7 +78,7 @@ router.get('/', authenticationMiddleware, getMedicalRecords);
  *       '500':
  *         description: Internal server error.
  */
-router.route('/:id/patient').get(getPatientMedicalRecord);
+router.route('/:id/').get(getPatientMedicalRecord);
 
 /**
  * @swagger

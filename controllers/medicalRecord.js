@@ -52,7 +52,7 @@ const updateMedicalRecord = async (req, res) => {
 };
 
 const getPatientMedicalRecord = async (req, res) => {
-    const {id: patientId} = req.body;
+    const {id: patientId} = req.params;
     const isValidPatient = await patientModel.findById(patientId);
     
     if (!isValidPatient) {
