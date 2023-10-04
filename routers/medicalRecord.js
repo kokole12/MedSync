@@ -5,7 +5,8 @@ const {
     getPatientMedicalRecord,
     getMedicalRecords,
     updateMedicalRecord,
-    deleteMedicalRecord} = require('../controllers/medicalRecord');
+    deleteMedicalRecord,
+    searchMedicalRecord} = require('../controllers/medicalRecord');
 
 const router = express.Router();
 
@@ -125,5 +126,36 @@ router.put('/:id', authenticationMiddleware, updateMedicalRecord);
  *         description: Internal server error.
  */
 router.delete('/:id', authenticationMiddleware,deleteMedicalRecord);
+
+
+/**
+ * @swagger
+ * /api/v1/medical/search:
+ *   post:
+ *     summary: Get data with two query parameters
+ *     description: Searches a medical records by email or contact.
+ *     tags:
+ *      - Patients
+ *     parameters:
+ *       - in: query
+ *         name: phoneNumber
+ *         required: false
+ *         description: Description of the first query parameter.
+ *         schema:
+ *           type: string
+ *       - in: query
+ *         name: email
+ *         required: false
+ *         description: Description of the second query parameter.
+ *         schema:
+ *           type: string
+ *     responses:
+ *       200:
+ *         description: OK
+ *       400:
+ *         description: Bad Request
+ */
+
+router.post('/search', searchMedicalRecord);
 
 module.exports = router;

@@ -33,32 +33,33 @@ const updatePatient = async(req, res) => {
 }
 
 const searchPatient = async (req, res) => {
-    const { contactNumber, email } = req.query;
-    const searchTerm = req.body.searchTerm;
-    let queryObject = {};
+  const { contactNumber, email } = req.query;
+  const searchTerm = req.body.searchTerm;
+  let queryObject = {};
   
-    if (contactNumber) {
-      queryObject.phoneNumber = { $regex: contactNumber, $options: 'i' };
-    }
-    if (email) {
-      queryObject.email = { $regex: email, $options: 'i' };
-    }
+  if (contactNumber) {
+    queryObject.phoneNumber = { $regex: contactNumber, $options: 'i' };
+  }
+  if (email) {
+    queryObject.email = { $regex: email, $options: 'i' };
+  }
   
-    console.log(queryObject);
+  console.log(queryObject);
   
-    try {
-      const patients = await patientModel.find(queryObject);
+  try {
+    const patients = await patientModel.find(queryObject);
   
-      if (patients.length === 0) {
-        return res.status(404).json({ error: 'No patient found' });
-      }
+  if (patients.length === 0) {
+    return res.status(404).json({ error: 'No patient found' });
+    return;
+  }
   
-      res.status(200).json({ patients });
-    } catch (error) {
-      console.error(error);
-      res.status(500).json({ error: 'Error searching for patients' });
-    }
-  };
+  res.status(200).json({ patients });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: 'Error searching for patients' });
+  }
+};
   
 
 module.exports = {

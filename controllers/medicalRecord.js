@@ -86,10 +86,48 @@ const deleteMedicalRecord = async (req, res) => {
     res.status(204).json({Message: "deleting medical record"})      
 
 }
+
+const searchMedicalRecord = async(req, res) => {
+    let queryObject = {};
+    const {email, contactNumber} = req.query;
+    const searchterm  =  req.body.searchterm;
+
+    if (contactNumber) {
+        queryObject.phoneNumber = { $regex: contactNumber, $options: 'i' };
+    }
+    if (email) {
+        queryObject.email = { $regex: email, $options: 'i' };
+    }
+
+    try {
+        const patient = await patientModel.find(queryObject);
+
+        if (patient.length === 0) {
+            res.status(StatusCodes.NOT_FOUND).json({error: 'No patient found'});
+            return;
+        }
+
+        const patientDetails = patient[0];
+        const patientId = patientDetails._id.toString();
+
+        const medicalRecord = await medicalRecordModel.find({_id: patientId});
+
+        if (medicalRecord.length === 0) {
+            res.status(StatusCodes.NOT_FOUND).json({error: 'No medical records'});
+            return;
+        }
+        res.status(200).json( patient );
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ error: 'Error searching for medical records' });
+    }
+
+}
 module.exports = {
     createMedicalRecord,
     getPatientMedicalRecord,
     getMedicalRecords, 
     updateMedicalRecord,
-    deleteMedicalRecord
+    deleteMedicalRecord,
+    searchMedicalRecord
 }
