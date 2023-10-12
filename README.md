@@ -12,5 +12,6 @@
 # Routes
 
 #Docs
-- https://medsyncapi.onrender.com
+- https://medsyncapi.onrender.com/api-docs
+
   
